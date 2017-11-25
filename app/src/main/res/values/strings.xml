@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidFundamentalsPractice</string>
+    <string name="enter_screen_rotation_button_text">Enter Screen Rotation</string>
+    <string name="screen_rotation_save_button_text">Save</string>
+    <string name="screen_rotation_edittext_text">Enter a text to save</string>
+    <string name="screen_rotation_textview_text">Empty Value</string>
+</resources>
