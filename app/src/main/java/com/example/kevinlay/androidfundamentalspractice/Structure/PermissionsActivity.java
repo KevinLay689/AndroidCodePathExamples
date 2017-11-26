@@ -14,7 +14,12 @@ import android.widget.Toast;
 import com.example.kevinlay.androidfundamentalspractice.R;
 
 /**
- * 
+ * This Activity requests Microphone and Contact access at runtime
+ *
+ * Major Takeaways from this:
+ *  Check for permissions by using ContextCompat.checkSelfPermission, it will return granted or denied
+ *  If access is denied, invoke ActivityCompat.requestPermissions to call onRequestPermissionsResult
+ *  The request code is equal to the contact code you sent in through requestPermissions
  *
  */
 
@@ -85,6 +90,7 @@ public class PermissionsActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(this, "Contact Permission Denied", Toast.LENGTH_LONG).show();
                 }
+                break;
             }
             case RECORD_AUDIO_PERMISSIONS_REQUEST: {
                 if (grantResults.length > 0
@@ -93,6 +99,7 @@ public class PermissionsActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(this, "Microphone Permission Denied", Toast.LENGTH_LONG).show();
                 }
+                break;
             }
 
         }
