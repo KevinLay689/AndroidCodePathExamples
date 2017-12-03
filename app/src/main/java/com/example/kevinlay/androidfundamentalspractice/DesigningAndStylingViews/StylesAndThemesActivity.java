@@ -13,7 +13,8 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  * -Defined in styles.xml
  * -Inherit from other styles using parent attribute or use periods like LargeFont.Red.Bold etc
  * -Themes can be applied at application level or activity level
- *
+ * -Themes are applied in Manifest
+ * -Themes can override default theme items like button text color
  */
 public class StylesAndThemesActivity extends AppCompatActivity {
 
