@@ -62,6 +62,9 @@
     <string name="enter_card_view_button_text">Enter Card View Activity</string>
     <string name="enter_adapter_view_button_text">Enter Adapter Views Activity</string>
 
+    <string name="style_text_view_text">This TextView has a set style</string>
+    <string name="theme_button_text">This Activity has a custom theme that alters button text</string>
+
 
 
     <string-array name="planets_array">
