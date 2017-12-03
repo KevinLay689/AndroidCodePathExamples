@@ -8,24 +8,17 @@
     tools:context="com.example.kevinlay.androidfundamentalspractice.DesigningAndStylingViews.DesigningAndStylingViewActivity">
 
     <Button
-        android:id="@+id/bEnterDrawables"
+        android:id="@+id/bEnterRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/enter_drawable_view_button_text" />
+        android:text="@string/enter_recycler_view_button_text" />
 
     <Button
-        android:id="@+id/bEnterAnimations"
+        android:id="@+id/bEnterCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/enter_animations_view_button_text" />
-
-    <Button
-        android:id="@+id/bEnterStylesAndThemes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/enter_style_and_themes_view_button_text" />
+        android:text="@string/enter_card_view_button_text" />
 
 </LinearLayout>

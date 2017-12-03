@@ -43,6 +43,7 @@
     <string name="enter_designing_views_button_text">Enter Designing and Styling Views Activity</string>
     <string name="enter_drawable_view_button_text">Enter Drawable View Activity</string>
     <string name="enter_animations_view_button_text">Enter Animation View Activity</string>
+    <string name="enter_style_and_themes_view_button_text">Enter Styles and Themes Activity</string>
 
     <string name="solid_color_shape_text_view_text">This text has a custom drawable background</string>
     <string name="gradient_color_shape_text_view_text">This text has a custom gradient drawable background</string>
@@ -56,6 +57,11 @@
     <string name="animate_fade_out_xml_button_text">fade out with xml</string>
 
     <string name="animate_text_view_text">This text will be animated</string>
+
+    <string name="enter_recycler_view_button_text">Enter Recycler View Activity</string>
+    <string name="enter_card_view_button_text">Enter Card View Activity</string>
+    <string name="enter_adapter_view_button_text">Enter Adapter Views Activity</string>
+
 
 
     <string-array name="planets_array">

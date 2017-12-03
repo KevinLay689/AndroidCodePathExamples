@@ -30,7 +30,11 @@
         <activity android:name=".ViewsAndLayouts.InputViewActivity" />
         <activity android:name=".DesigningAndStylingViews.DesigningAndStylingViewActivity" />
         <activity android:name=".DesigningAndStylingViews.AnimationActivity" />
-        <activity android:name=".DesigningAndStylingViews.DrawableActivity"></activity>
+        <activity android:name=".DesigningAndStylingViews.DrawableActivity" />
+        <activity android:name=".AdapterViews.AdapterViewActivity" />
+        <activity android:name=".DesigningAndStylingViews.StylesAndThemesActivity" />
+        <activity android:name=".AdapterViews.RecyclerViewActivity" />
+        <activity android:name=".AdapterViews.CardViewActivity"></activity>
     </application>
 
 </manifest>

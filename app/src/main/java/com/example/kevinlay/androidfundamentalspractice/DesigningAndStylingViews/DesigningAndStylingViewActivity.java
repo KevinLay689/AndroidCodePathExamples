@@ -7,12 +7,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.kevinlay.androidfundamentalspractice.R;
-import com.example.kevinlay.androidfundamentalspractice.Structure.PermissionsActivity;
-import com.example.kevinlay.androidfundamentalspractice.Structure.ScreenRotationActivity;
 
 public class DesigningAndStylingViewActivity extends AppCompatActivity {
 
-    private Button bEnterDrawables, bEnterAnimations;
+    private Button bEnterDrawables, bEnterAnimations, bEnterStylesAndThemes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +32,15 @@ public class DesigningAndStylingViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), AnimationActivity.class);
+                startActivity(i);
+            }
+        });
+
+        bEnterStylesAndThemes = (Button) findViewById(R.id.bEnterStylesAndThemes);
+        bEnterStylesAndThemes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), StylesAndThemesActivity.class);
                 startActivity(i);
             }
         });
