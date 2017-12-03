@@ -5,20 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.kevinlay.androidfundamentalspractice.Structure.StructureMainActivity">
+    tools:context="com.example.kevinlay.androidfundamentalspractice.Structure.PermissionsActivity">
+
 
     <Button
-        android:id="@+id/bEnterScreenRotation"
+        android:id="@+id/bRequestMicrophone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/enter_screen_rotation_button_text" />
+        android:text="@string/permission_microphone_request_textview_text" />
 
     <Button
-        android:id="@+id/bEnterPermission"
+        android:id="@+id/bRequestContacts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/enter_permission_activity_button_text" />
+        android:text="@string/permission_contact_request_textview_text" />
 
 </LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.kevinlay.androidfundamentalspractice.ViewsAndLayouts.InputViewActivity">
+
+    <CheckBox android:id="@+id/cbMeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/meat_checkbox_text" />
+
+    <CheckBox android:id="@+id/cbCheese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cheese_checkbox_text" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton android:id="@+id/rbPirate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pirate_radio_button_text"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton android:id="@+id/rbNinja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ninja_radio_button_text"
+            android:onClick="onRadioButtonClicked"/>
+
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/sPlanets"
+        android:layout_width="wrap_content"
+        android:entries="@array/planets_array"
+        android:prompt="@string/planets_spinner_text"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

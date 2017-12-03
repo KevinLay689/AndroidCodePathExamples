@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.kevinlay.androidfundamentalspractice.ViewsAndLayouts.TextViewActivity">
+
+    <TextView
+        android:id="@+id/tvShadowText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shadowColor="#00ccff"
+        android:shadowRadius="5"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:text="@string/blue_shadow_text_view" />
+
+    <TextView
+        android:id="@+id/tvCapsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:text="@string/all_caps_text_view" />
+
+    <TextView
+        android:id="@+id/tvHtmlText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:autoLink="all"
+        android:linksClickable="true" />
+
+    <TextView
+        android:id="@+id/tvImageTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:drawableLeft="@drawable/ic_action_name"
+        android:text="@string/image_text_view"/>
+
+    <TextView
+        android:id="@+id/tvCustomFontTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:text="@string/custom_font_text_view"/>
+</LinearLayout>

@@ -8,17 +8,32 @@
     tools:context="com.example.kevinlay.androidfundamentalspractice.Structure.StructureMainActivity">
 
     <Button
-        android:id="@+id/bEnterScreenRotation"
+        android:id="@+id/bEnterTextViewActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/enter_screen_rotation_button_text" />
+        android:text="@string/enter_text_view_button_text" />
 
     <Button
-        android:id="@+id/bEnterPermission"
+        android:id="@+id/bEnterEditTextActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/enter_permission_activity_button_text" />
+        android:text="@string/enter_edit_text_button_text" />
+
+    <Button
+        android:id="@+id/bEnterImageViewActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/enter_image_view_button_text" />
+
+    <Button
+        android:id="@+id/bEnterInputViewActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/enter_input_view_button_text" />
+
 
 </LinearLayout>

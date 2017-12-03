@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.kevinlay.androidfundamentalspractice.DesigningAndStylingViews.DrawableActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/solid_color_shape_text_view_text"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:background="@drawable/solid_color_shape"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gradient_color_shape_text_view_text"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:background="@drawable/gradient_shape"/>
+
+    <Button
+        android:id="@+id/bSelectorButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/state_list_button_text"
+        android:gravity="center"
+        android:background="@drawable/selector_button_bg"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/drawable_layer_list_shape"/>
+
+    <Button
+        android:id="@+id/bStyledButton"
+        style="@style/NiceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nice_button_text" />
+
+</LinearLayout>

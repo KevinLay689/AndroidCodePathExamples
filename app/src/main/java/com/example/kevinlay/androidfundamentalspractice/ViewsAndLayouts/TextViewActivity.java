@@ -8,6 +8,14 @@ import android.widget.TextView;
 
 import com.example.kevinlay.androidfundamentalspractice.R;
 
+/**
+ * TextView manipulation
+ *
+ * Major Takeaways
+ * -Can truncate text length
+ * -Can do custom fonts but must be at runtime
+ */
+
 public class TextViewActivity extends AppCompatActivity {
 
     TextView tvHtmlFormatText, tvCustomFontTextView;
@@ -29,7 +37,7 @@ public class TextViewActivity extends AppCompatActivity {
 
             // Create the TypeFace from the TTF asset
             Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Chantelli_Antiqua.ttf");
-            
+
             // Assign the typeface to the view
             txt.setTypeface(font);
          */

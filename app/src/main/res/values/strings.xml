@@ -1,7 +1,68 @@
 <resources>
     <string name="app_name">AndroidFundamentalsPractice</string>
+
+    <string name="enter_structure_activity_button_text">Enter Structure Activity</string>
+    <string name="enter_vl_activity_button_text">Enter Views and Layout Activity</string>
+
     <string name="enter_screen_rotation_button_text">Enter Screen Rotation</string>
     <string name="screen_rotation_save_button_text">Save</string>
     <string name="screen_rotation_edittext_text">Enter a text to save</string>
     <string name="screen_rotation_textview_text">Empty Value</string>
+    <string name="screen_rotation_textview_saved_text">Saved Successfully!</string>
+
+    <string name="enter_permission_activity_button_text">Enter Permission Activity</string>
+
+    <string name="permission_microphone_request_textview_text">Request Microphone Access</string>
+    <string name="permission_contact_request_textview_text">Request Contact Access</string>
+
+    <string name="enter_text_view_button_text">Enter TextView Activity</string>
+    <string name="enter_edit_text_button_text">Enter Edit Text Activity</string>
+    <string name="enter_image_view_button_text">Enter Image View Activity</string>
+    <string name="enter_input_view_button_text">Enter Input View Activity</string>
+
+    <string name="blue_shadow_text_view">This text has a blue shadow</string>
+    <string name="all_caps_text_view">This text is in all caps</string>
+    <string name="image_text_view">This text has an image to the left</string>
+    <string name="custom_font_text_view">This text is custom font</string>
+
+    <string name="text_highlight_hint_edit_text">Highlight this for a surprise</string>
+    <string name="text_digit_limit_hint_edit_text">This only takes 0s and 1s</string>
+    <string name="username_hint_edit_text">Username</string>
+    <string name="text_counter_hint_edit_text">This has a text counter</string>
+
+    <string name="password_hint_edit_text">Password</string>
+
+    <string name="meat_checkbox_text">Meat</string>
+    <string name="cheese_checkbox_text">Cheese</string>
+
+    <string name="pirate_radio_button_text">Pirate</string>
+    <string name="ninja_radio_button_text">Ninja</string>
+
+    <string name="planets_spinner_text">Select a planet</string>
+
+    <string name="enter_designing_views_button_text">Enter Designing and Styling Views Activity</string>
+    <string name="enter_drawable_view_button_text">Enter Drawable View Activity</string>
+    <string name="enter_animations_view_button_text">Enter Animation View Activity</string>
+
+    <string name="solid_color_shape_text_view_text">This text has a custom drawable background</string>
+    <string name="gradient_color_shape_text_view_text">This text has a custom gradient drawable background</string>
+    <string name="state_list_button_text">Click Button to see State Change</string>
+    <string name="nice_button_text">This Button has a style</string>
+
+    <string name="animate_rotate_and_scale_button_text">rotate and scale</string>
+    <string name="animate_alpha_button_text">alpha</string>
+    <string name="animate_translate_button_text">translate</string>
+    <string name="animate_rotate_button_text">rotate</string>
+    <string name="animate_fade_out_xml_button_text">fade out with xml</string>
+
+    <string name="animate_text_view_text">This text will be animated</string>
+
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+    </string-array>
+
 </resources>

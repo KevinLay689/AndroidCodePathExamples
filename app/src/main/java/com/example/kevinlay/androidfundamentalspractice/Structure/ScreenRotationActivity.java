@@ -11,6 +11,14 @@ import android.widget.TextView;
 
 import com.example.kevinlay.androidfundamentalspractice.R;
 
+/**
+ * This class demonstrates how to save activity state
+ *
+ * 2 major take aways, must override onRestoreInstanceState and onSaveInstanceState
+ * Must override the right onSaveInstanceState with 1 param, outState
+ *
+ */
+
 public class ScreenRotationActivity extends AppCompatActivity {
 
     private static final String TAG = "ScreenRotationActivity";
