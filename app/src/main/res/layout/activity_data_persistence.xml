@@ -5,41 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.kevinlay.androidfundamentalspractice.MainActivity">
+    tools:context="com.example.kevinlay.androidfundamentalspractice.DataPersistence.DataPersistenceActivity">
 
     <Button
-        android:id="@+id/bEnterStructureActivity"
+        android:id="@+id/bEnterSharedPref"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/enter_structure_activity_button_text" />
+        android:text="@string/enter_shared_pref_button_text" />
 
     <Button
-        android:id="@+id/bEnterViewsAndLayoutActivity"
+        android:id="@+id/bEnterInternalStorage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/enter_vl_activity_button_text" />
+        android:text="@string/enter_internal_storage_button_text" />
 
     <Button
-        android:id="@+id/bEnterDesignActivity"
+        android:id="@+id/bEnterExternalStorage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/enter_designing_views_button_text" />
+        android:text="@string/enter_external_storage_button_text" />
 
     <Button
-        android:id="@+id/bEnterAdapterViews"
+        android:id="@+id/bEnterSqliteDatabase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/enter_adapter_view_activity_button_text" />
-
-    <Button
-        android:id="@+id/bEnterDataPersistence"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/enter_data_persistence_activity_button_text" />
-
+        android:text="@string/enter_sqlite_database_button_text" />
 </LinearLayout>

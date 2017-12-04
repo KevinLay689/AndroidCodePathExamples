@@ -60,12 +60,16 @@
 
     <string name="enter_recycler_view_button_text">Enter Recycler View Activity</string>
     <string name="enter_card_view_button_text">Enter Card View Activity</string>
-    <string name="enter_adapter_view_button_text">Enter Adapter Views Activity</string>
+    <string name="enter_adapter_view_activity_button_text">Enter Adapter Views Activity</string>
 
     <string name="style_text_view_text">This TextView has a set style</string>
     <string name="theme_button_text">This Activity has a custom theme that alters button text</string>
 
-
+    <string name="enter_data_persistence_activity_button_text">Enter Data Persistence Activity</string>
+    <string name="enter_shared_pref_button_text">Enter Shared Prefernces Activity</string>
+    <string name="enter_internal_storage_button_text">Enter Internal Storage Activity</string>
+    <string name="enter_external_storage_button_text">Enter External Storage Activity</string>
+    <string name="enter_sqlite_database_button_text">Enter Sqlite Database Activity</string>
 
     <string-array name="planets_array">
         <item>Mercury</item>

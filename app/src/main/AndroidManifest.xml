@@ -32,9 +32,16 @@
         <activity android:name=".DesigningAndStylingViews.AnimationActivity" />
         <activity android:name=".DesigningAndStylingViews.DrawableActivity" />
         <activity android:name=".AdapterViews.AdapterViewActivity" />
-        <activity android:name=".DesigningAndStylingViews.StylesAndThemesActivity" android:theme="@style/AppThemeCustom" />
+        <activity
+            android:name=".DesigningAndStylingViews.StylesAndThemesActivity"
+            android:theme="@style/AppThemeCustom" />
         <activity android:name=".AdapterViews.RecyclerViewActivity" />
-        <activity android:name=".AdapterViews.CardViewActivity"></activity>
+        <activity android:name=".AdapterViews.CardViewActivity" />
+        <activity android:name=".DataPersistence.DataPersistenceActivity" />
+        <activity android:name=".DataPersistence.SharedPreferencesActivity" />
+        <activity android:name=".DataPersistence.InternalStorageActivity" />
+        <activity android:name=".DataPersistence.ExternalStorageActivity" />
+        <activity android:name=".DataPersistence.SqliteDatabaseActivity"></activity>
     </application>
 
 </manifest>
