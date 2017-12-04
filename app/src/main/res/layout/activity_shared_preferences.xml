@@ -1,9 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.kevinlay.androidfundamentalspractice.DataPersistence.SharedPreferencesActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvSharedPreferenceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/shared_preference_text_view_default_text" />
+
+    <EditText
+        android:id="@+id/etSharedPrefKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/shared_preference_key_edit_text_hint" />
+
+    <EditText
+        android:id="@+id/etSharedPrefValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/shared_preference_value_edit_text_hint" />
+
+    <Button
+        android:id="@+id/bLoadSharedPreferences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/load_shared_preference_button_text" />
+
+    <Button
+        android:id="@+id/bAddSharedPreferences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_shared_preference_button_text" />
+
+</LinearLayout>
