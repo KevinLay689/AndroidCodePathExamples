@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kevinlay.androidfundamentalspractice.R;
 
@@ -35,8 +36,15 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder>{
 
     // This method sets the view attributes based on the data
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.tvUsername.setText(users.get(position).getUsername());
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Clicked position " + position, Toast.LENGTH_SHORT ).show();
+            }
+        });
     }
 
     // This method returns your model size
