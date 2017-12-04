@@ -12,6 +12,22 @@ import android.widget.Toast;
 
 import com.example.kevinlay.androidfundamentalspractice.R;
 
+/**
+ * Shared Preference Activity
+ *
+ * Major Takeaways
+ * -Adding Shared Preferences
+ *      1. Get reference to shared preference
+ *      2. Get reference to the editor of that shared preference object
+ *      3. Use editor to add values
+ *      4. Use editor.apply() to do asynchronous call to save data
+ *
+ * -Loading Shared Preference
+ *      1. Get reference to shared preferences
+ *      2. Use sharedPreference.getString to retrieve value;
+ *
+ */
+
 public class SharedPreferencesActivity extends AppCompatActivity {
 
     private Button bLoadSharedPreferences, bAddSharedPreferences;
@@ -49,9 +65,7 @@ public class SharedPreferencesActivity extends AppCompatActivity {
     private void addSharedPreferences(String key, String value) {
         String toastMsg = "Added Successfully";
 
-//        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(key, value);
         editor.apply();
