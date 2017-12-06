@@ -77,6 +77,25 @@
     <string name="shared_preference_value_edit_text_hint">Shared Preference Value</string>
     <string name="shared_preference_text_view_default_text">Value will appear here</string>
 
+    <string name="load_internal_storage_button_text">Load File</string>
+    <string name="add_internal_storage_button_text">Add File</string>
+    <string name="internal_storage_message_edit_text_hint">Enter Message Here</string>
+    <string name="internal_storage_file_name_edit_text_hint">Enter File Name Here</string>
+    <string name="internal_storage_text_view_default_text">Loaded message will appear here</string>
+
+    <string name="load_external_storage_button_text">Load File</string>
+    <string name="add_external_storage_button_text">Add File</string>
+    <string name="external_storage_message_edit_text_hint">Enter Message Here</string>
+    <string name="external_storage_file_name_edit_text_hint">Enter File Name Here</string>
+    <string name="external_storage_text_view_default_text">Loaded message will appear here</string>
+
+    <string name="enter_fragments_button_text">Enter Fragments Activity</string>
+    <string name="enter_create_fragments_button_text">Enter Create Fragment Activity</string>
+    <string name="enter_dialog_fragment_button_text">Enter Dialog Fragment Activity</string>
+    <string name="enter_view_pager_button_text">Enter View Pager Activity</string>
+    <string name="enter_flexible_ui_button_text">Enter Flexible UI Activity</string>
+
+
     <string-array name="planets_array">
         <item>Mercury</item>
         <item>Venus</item>

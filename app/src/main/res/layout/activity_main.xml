@@ -42,4 +42,11 @@
         android:layout_margin="10dp"
         android:text="@string/enter_data_persistence_activity_button_text" />
 
+    <Button
+        android:id="@+id/bEnterFragments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/enter_fragments_button_text" />
+
 </LinearLayout>

@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kevinlay.androidfundamentalspractice.DataPersistence.InternalStorageActivity">
+    android:orientation="vertical"
+    tools:context="com.example.kevinlay.androidfundamentalspractice.DataPersistence.SharedPreferencesActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvInternalStorageTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/internal_storage_text_view_default_text" />
+
+    <EditText
+        android:id="@+id/etInternalStorageMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/internal_storage_message_edit_text_hint"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLength="2000"
+        android:maxLines="4"/>
+
+    <EditText
+        android:id="@+id/etInternalStorageFileName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/internal_storage_file_name_edit_text_hint" />
+
+    <Button
+        android:id="@+id/bLoadInternalStorage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/load_internal_storage_button_text" />
+
+    <Button
+        android:id="@+id/bAddInternalStorage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_internal_storage_button_text" />
+
+</LinearLayout>
