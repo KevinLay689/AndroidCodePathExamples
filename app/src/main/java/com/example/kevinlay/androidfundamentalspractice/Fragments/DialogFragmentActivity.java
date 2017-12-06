@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.kevinlay.androidfundamentalspractice.R;
 
-public class DialogFragmentActivity extends AppCompatActivity {
+public class DialogFragmentActivity extends AppCompatActivity implements  MyAlertDialogFragment.AlertListener{
 
-    private Button bShowCustomDialogFragment, bShowAlertDialogFragment;
+    private Button bShowCustomDialogFragment, bShowAlertDialogFragment, bShowReturnedDialogValue;
+    private String value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,7 @@ public class DialogFragmentActivity extends AppCompatActivity {
 
         bShowCustomDialogFragment = (Button) findViewById(R.id.bShowCustomDialogFragment);
         bShowAlertDialogFragment = (Button) findViewById(R.id.bShowAlertDialogFragment);
+        bShowReturnedDialogValue = (Button) findViewById(R.id.bShowReturnedDialogValue);
 
         bShowCustomDialogFragment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +37,17 @@ public class DialogFragmentActivity extends AppCompatActivity {
             }
         });
 
+        bShowReturnedDialogValue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showReturnedValue();
+            }
+        });
+
+    }
+
+    private void showReturnedValue() {
+
     }
 
 
@@ -44,7 +58,13 @@ public class DialogFragmentActivity extends AppCompatActivity {
     }
 
     private void showAlertDialog() {
-
+        android.app.FragmentManager fm = getFragmentManager();
+        MyAlertDialogFragment fragment = MyAlertDialogFragment.newInstance("This is an alert dialog");
+        fragment.show(fm,"");
     }
 
+    @Override
+    public void updateData(String input) {
+        Toast.makeText(this, input , Toast.LENGTH_SHORT).show();
+    }
 }

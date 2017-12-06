@@ -18,4 +18,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/show_dialog_fragment_alert_button_text" />
+
+    <Button
+        android:id="@+id/bShowReturnedDialogValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_dialog_fragment_returned_value_button_text" />
 </LinearLayout>

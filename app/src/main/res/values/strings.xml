@@ -97,6 +97,7 @@
 
     <string name="show_dialog_fragment_custom_button_text">Show Dialog Fragment Custom</string>
     <string name="show_dialog_fragment_alert_button_text">Show Alert Dialog Fragment</string>
+    <string name="show_dialog_fragment_returned_value_button_text">Show Value Returned</string>
 
 
     <string-array name="planets_array">
