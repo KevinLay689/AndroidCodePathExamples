@@ -7,15 +7,17 @@
     android:orientation="vertical"
     tools:context="com.example.kevinlay.androidfundamentalspractice.Fragments.DialogFragmentActivity">
 
-    <Button
-        android:id="@+id/bShowCustomDialogFragment"
+    <TextView
+        android:id="@+id/tvCustomDialogTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/show_dialog_fragment_custom_button_text" />
+        android:padding="20dp"
+        android:gravity="center"
+        android:text="Custom Dialog Fragment" />
 
-    <Button
-        android:id="@+id/bShowAlertDialogFragment"
+    <EditText
+        android:id="@+id/etCustomDialog"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/show_dialog_fragment_alert_button_text" />
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

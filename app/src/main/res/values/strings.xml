@@ -95,6 +95,9 @@
     <string name="enter_view_pager_button_text">Enter View Pager Activity</string>
     <string name="enter_flexible_ui_button_text">Enter Flexible UI Activity</string>
 
+    <string name="show_dialog_fragment_custom_button_text">Show Dialog Fragment Custom</string>
+    <string name="show_dialog_fragment_alert_button_text">Show Alert Dialog Fragment</string>
+
 
     <string-array name="planets_array">
         <item>Mercury</item>
@@ -102,5 +105,8 @@
         <item>Earth</item>
         <item>Mars</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
