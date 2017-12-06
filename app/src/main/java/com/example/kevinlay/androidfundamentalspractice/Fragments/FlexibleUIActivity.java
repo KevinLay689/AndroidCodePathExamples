@@ -5,6 +5,11 @@ import android.os.Bundle;
 
 import com.example.kevinlay.androidfundamentalspractice.R;
 
+/**
+ * This class needs work
+ *
+ */
+
 public class FlexibleUIActivity extends AppCompatActivity {
 
     @Override
