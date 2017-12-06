@@ -13,7 +13,7 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  * Created by kevinlay on 12/5/17.
  */
 
-public class FragmentTwo extends Fragment{
+public class FragmentTwo extends android.support.v4.app.Fragment{
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

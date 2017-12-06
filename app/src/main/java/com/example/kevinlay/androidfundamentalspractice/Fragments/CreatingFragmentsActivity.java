@@ -30,7 +30,7 @@ public class CreatingFragmentsActivity extends AppCompatActivity implements Frag
         setContentView(R.layout.activity_creating_fragments);
 
         FragmentOne fragmentOne = new FragmentOne();
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         // frag1 is a tag to later find that element
         fragmentTransaction.add(R.id.fragmentOneContainer, fragmentOne, "frag1");
         // Append this transaction to the backstack
@@ -38,7 +38,7 @@ public class CreatingFragmentsActivity extends AppCompatActivity implements Frag
         fragmentTransaction.commit();
 
         // Find fragment by Tag
-        FragmentOne fragmentOne1 = (FragmentOne) getFragmentManager().findFragmentByTag("frag1");
+        FragmentOne fragmentOne1 = (FragmentOne) getSupportFragmentManager().findFragmentByTag("frag1");
     }
 
 

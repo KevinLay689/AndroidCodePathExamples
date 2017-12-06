@@ -14,7 +14,7 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  * Created by kevinlay on 12/5/17.
  */
 
-public class FragmentOne extends Fragment {
+public class FragmentOne extends android.support.v4.app.Fragment {
 
     private OnItemSelectedListener listener;
 
