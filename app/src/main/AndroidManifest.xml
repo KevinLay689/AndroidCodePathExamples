@@ -48,7 +48,8 @@
         <activity android:name=".Fragments.CreatingFragmentsActivity" />
         <activity android:name=".Fragments.ViewPagerActvity" />
         <activity android:name=".Fragments.DialogFragmentActivity" />
-        <activity android:name=".Fragments.FlexibleUIActivity"></activity>
+        <activity android:name=".Fragments.FlexibleUIActivity" />
+        <activity android:name=".Fragments.FlexibleUI.FlexibleUiActivityB"></activity>
     </application>
 
 </manifest>

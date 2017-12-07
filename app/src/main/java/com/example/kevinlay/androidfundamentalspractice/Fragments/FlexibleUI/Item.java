@@ -1,12 +1,16 @@
 package com.example.kevinlay.androidfundamentalspractice.Fragments.FlexibleUI;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by kevinlay on 12/6/17.
  */
 
-public class Item {
+public class Item implements Serializable{
+
+    private static final long serialVersionUID = -1213949467658913456L;
+
     private String title;
     private String body;
 

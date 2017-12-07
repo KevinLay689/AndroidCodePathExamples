@@ -5,4 +5,16 @@
     android:padding="20dp"
     tools:context=".Fragments.FlexibleUIActivity" >
 
+    <fragment
+        android:id="@+id/fragmentItemsList"
+        android:name="com.example.kevinlay.androidfundamentalspractice.Fragments.FlexibleUI.ItemListFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        tools:layout="@layout/fragment_item_list" />
+
+
 </RelativeLayout>
