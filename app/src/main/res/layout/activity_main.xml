@@ -11,42 +11,42 @@
         android:id="@+id/bEnterStructureActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:text="@string/enter_structure_activity_button_text" />
 
     <Button
         android:id="@+id/bEnterViewsAndLayoutActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:text="@string/enter_vl_activity_button_text" />
 
     <Button
         android:id="@+id/bEnterDesignActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:text="@string/enter_designing_views_button_text" />
 
     <Button
         android:id="@+id/bEnterAdapterViews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:text="@string/enter_adapter_view_activity_button_text" />
 
     <Button
         android:id="@+id/bEnterDataPersistence"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:text="@string/enter_data_persistence_activity_button_text" />
 
     <Button
         android:id="@+id/bEnterFragments"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:text="@string/enter_fragments_button_text" />
+
+    <Button
+        android:id="@+id/bEnterServices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_services_activity_button_text" />
 
 </LinearLayout>

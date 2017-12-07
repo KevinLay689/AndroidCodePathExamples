@@ -13,7 +13,7 @@ import com.example.kevinlay.androidfundamentalspractice.Fragments.FlexibleUI.Ite
 import com.example.kevinlay.androidfundamentalspractice.R;
 
 /**
- * This class needs work
+ * This class needs work, don't fully understand this yet
  *
  */
 

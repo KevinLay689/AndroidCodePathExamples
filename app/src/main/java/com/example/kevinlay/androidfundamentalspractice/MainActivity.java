@@ -10,13 +10,14 @@ import com.example.kevinlay.androidfundamentalspractice.AdapterViews.AdapterView
 import com.example.kevinlay.androidfundamentalspractice.DataPersistence.DataPersistenceActivity;
 import com.example.kevinlay.androidfundamentalspractice.DesigningAndStylingViews.DesigningAndStylingViewActivity;
 import com.example.kevinlay.androidfundamentalspractice.Fragments.FragmentsActvity;
+import com.example.kevinlay.androidfundamentalspractice.Services.ServicesActivity;
 import com.example.kevinlay.androidfundamentalspractice.Structure.StructureMainActivity;
 import com.example.kevinlay.androidfundamentalspractice.ViewsAndLayouts.ViewsAndLayoutsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button bEnterStructureActivity, bEnterVlActivity, bEnterDesignActivity, bEnterAdapterViews,
-                    bEnterDataPersistence, bEnterFragments;
+                    bEnterDataPersistence, bEnterFragments, bEnterServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), FragmentsActvity.class);
+                startActivity(i);
+            }
+        });
+
+        bEnterServices = (Button) findViewById(R.id.bEnterServices);
+        bEnterServices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), ServicesActivity.class);
                 startActivity(i);
             }
         });

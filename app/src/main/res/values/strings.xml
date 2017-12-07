@@ -99,6 +99,8 @@
     <string name="show_dialog_fragment_alert_button_text">Show Alert Dialog Fragment</string>
     <string name="show_dialog_fragment_returned_value_button_text">Show Value Returned</string>
 
+    <string name="enter_services_activity_button_text">Enter Services Activity</string>
+    <string name="start_intent_service_result_receiver_button_text">Start Intent Service with Result Receiver</string>
 
     <string-array name="planets_array">
         <item>Mercury</item>

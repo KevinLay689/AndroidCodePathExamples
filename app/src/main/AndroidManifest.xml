@@ -49,7 +49,11 @@
         <activity android:name=".Fragments.ViewPagerActvity" />
         <activity android:name=".Fragments.DialogFragmentActivity" />
         <activity android:name=".Fragments.FlexibleUIActivity" />
-        <activity android:name=".Fragments.FlexibleUI.FlexibleUiActivityB"></activity>
+        <activity android:name=".Fragments.FlexibleUI.FlexibleUiActivityB" />
+        <activity android:name=".Services.ServicesActivity"></activity>
+
+        <service android:name=".Services.MyTestService"
+            android:exported="false"/>
     </application>
 
 </manifest>

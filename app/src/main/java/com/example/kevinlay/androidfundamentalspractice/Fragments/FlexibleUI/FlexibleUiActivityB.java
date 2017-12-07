@@ -8,8 +8,6 @@ import com.example.kevinlay.androidfundamentalspractice.R;
 
 public class FlexibleUiActivityB extends AppCompatActivity {
 
-    private static final long serialVersionUID = -1213949467658913456L;
-
     ItemDetailFragment fragmentItemDetail;
 
     @Override
