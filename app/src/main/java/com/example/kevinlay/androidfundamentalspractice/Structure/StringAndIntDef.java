@@ -88,6 +88,22 @@ import java.lang.annotation.RetentionPolicy;
      }
  *
  */
+
+/**
+ * String and Int Def
+ *
+ * Steps to create Int or String Def Class
+ *      1. Annotate class with @Retention(RentionPolicy.SOURCE)
+ *          1a. This describes when the annotation will be discarded
+ *      2. Create the Enumerated valid values for the interface
+ *          2a. Looks like @IntDef({xx, xx, xx})
+ *      3. Create an interface for validating types
+ *          3a. Looks like public @interface ItemTypeDef{}
+ *      4. Create the constants
+ *      5. Create constructor for class and annotate the parameter with the interface type
+ *          5a. public Item(@ItemTypeDef int itemType) {this.itemType = itemType};
+ *
+ */
 public class StringAndIntDef {
 
     private static final String TAG = "StringAndIntDef";

@@ -17,6 +17,14 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  * 2 major take aways, must override onRestoreInstanceState and onSaveInstanceState
  * Must override the right onSaveInstanceState with 1 param, outState
  *
+ * Steps to handling Screen rotation
+ *      1. Override onSavedInstanceState(Bundle)
+ *          1a. This method is in charge of saving variables before the activity is recreated
+ *          1b. Save all variables that need to be preserved in this method
+ *      2. Override onRestoreInstanceState(Bundle)
+ *          2a. This method is called when the activity is recreated
+ *          2b. Perform a check if the Bundle != null otherwise a NPE will be returned if its empty and not checked
+ *          2c. Restore variables in this method using Bundle.getString, Bundle.getInt, etc.
  */
 
 public class ScreenRotationActivity extends AppCompatActivity {
@@ -59,9 +67,11 @@ public class ScreenRotationActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        screenRotationSavedValue = savedInstanceState.getString(screenRotationSavedValueKey);
-        tvValueHolder.setText(screenRotationSavedValue);
-        Log.i(TAG, "onRestoreInstanceState: " + screenRotationSavedValue);
+        if(savedInstanceState != null) {
+            screenRotationSavedValue = savedInstanceState.getString(screenRotationSavedValueKey);
+            tvValueHolder.setText(screenRotationSavedValue);
+            Log.i(TAG, "onRestoreInstanceState: " + screenRotationSavedValue);
+        }
     }
 
     @Override

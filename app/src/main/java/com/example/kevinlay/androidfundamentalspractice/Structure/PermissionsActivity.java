@@ -20,7 +20,16 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  *  Check for permissions by using ContextCompat.checkSelfPermission, it will return granted or denied
  *  If access is denied, invoke ActivityCompat.requestPermissions to call onRequestPermissionsResult
  *  The request code is equal to the contact code you sent in through requestPermissions
+ *  Grant results array contains the where the permission is saved
  *
+ *
+ *  Steps to requesting permissions
+ *      1. Call ContextCompat.checkSelfPermission(context, Mainfest.permission.xxxx)
+ *      2. Check if the permission is PackageManager.PERMISSION_GRANTED
+ *      3. If permission is not granted, invoke:
+ *      ActivityCompat.requestPermission(context, stringArrayOfPermissionsRequested[], someKey)
+ *      4. Override onRequestPermissionsResult and perform a switch on requestCode and check if the
+ *      grantResults[] > 0 and if it contains Permission Granted
  */
 
 public class PermissionsActivity extends AppCompatActivity {
