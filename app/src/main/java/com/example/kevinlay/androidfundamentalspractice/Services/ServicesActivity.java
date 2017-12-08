@@ -24,6 +24,13 @@ import com.example.kevinlay.androidfundamentalspractice.Fragments.ViewPagerActvi
 import com.example.kevinlay.androidfundamentalspractice.MainActivity;
 import com.example.kevinlay.androidfundamentalspractice.R;
 
+/**
+ * Services Activity
+ *
+ * MajorTakeaways
+ * -See other classes in package and below for creating services with Intent Service
+ */
+
 public class ServicesActivity extends AppCompatActivity {
 
     private MyTestReceiver receiverForTest;
@@ -79,7 +86,7 @@ public class ServicesActivity extends AppCompatActivity {
 
     }
 
-    /*
+    /**
         The following 2 methods are for creating notifications
 
         createNotification

@@ -50,24 +50,25 @@
         <activity android:name=".Fragments.DialogFragmentActivity" />
         <activity android:name=".Fragments.FlexibleUIActivity" />
         <activity android:name=".Fragments.FlexibleUI.FlexibleUiActivityB" />
-        <activity android:name=".Services.ServicesActivity"></activity>
+        <activity android:name=".Services.ServicesActivity" />
 
-        <service android:name=".Services.MyTestService"
-            android:exported="false"/>
-
-        <service android:name=".Services.PeriodicService"
-            android:exported="false"/>
-
+        <service
+            android:name=".Services.MyTestService"
+            android:exported="false" />
+        <service
+            android:name=".Services.PeriodicService"
+            android:exported="false" />
         <service
             android:name=".Services.MyBroadcastService"
             android:exported="false" />
 
         <receiver
             android:name=".Services.MyAlarmReceiver"
-            android:process=":remote" >
-        </receiver>
+            android:process=":remote" />
 
-
+        <activity android:name=".NetworkAndModels.NetworkAndModelsActivity" />
+        <activity android:name=".NetworkAndModels.OkHttpActivity" />
+        <activity android:name=".NetworkAndModels.RetrofitActivity"></activity>
     </application>
 
 </manifest>

@@ -105,6 +105,11 @@
     <string name="start_intent_service_alarm_manager_button_text">Start Intent Service with Alarm Manager</string>
     <string name="begin_notifications_button_text">Begin Notifications</string>
 
+
+    <string name="enter_networking_activity_button_text">Enter Network and Models Activity</string>
+    <string name="enter_okhttp_activity_button_text">Enter OkHttp Activity</string>
+    <string name="enter_retrofit_activity_button_text">Enter Retrofit Activity</string>
+
     <string-array name="planets_array">
         <item>Mercury</item>
         <item>Venus</item>

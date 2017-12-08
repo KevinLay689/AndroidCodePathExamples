@@ -49,4 +49,10 @@
         android:layout_height="wrap_content"
         android:text="@string/enter_services_activity_button_text" />
 
+    <Button
+        android:id="@+id/bEnterNetworking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_services_activity_button_text" />
+
 </LinearLayout>

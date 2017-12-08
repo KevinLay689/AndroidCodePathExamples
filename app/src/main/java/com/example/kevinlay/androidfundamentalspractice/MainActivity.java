@@ -10,6 +10,7 @@ import com.example.kevinlay.androidfundamentalspractice.AdapterViews.AdapterView
 import com.example.kevinlay.androidfundamentalspractice.DataPersistence.DataPersistenceActivity;
 import com.example.kevinlay.androidfundamentalspractice.DesigningAndStylingViews.DesigningAndStylingViewActivity;
 import com.example.kevinlay.androidfundamentalspractice.Fragments.FragmentsActvity;
+import com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.NetworkAndModelsActivity;
 import com.example.kevinlay.androidfundamentalspractice.Services.ServicesActivity;
 import com.example.kevinlay.androidfundamentalspractice.Structure.StructureMainActivity;
 import com.example.kevinlay.androidfundamentalspractice.ViewsAndLayouts.ViewsAndLayoutsActivity;
@@ -17,7 +18,7 @@ import com.example.kevinlay.androidfundamentalspractice.ViewsAndLayouts.ViewsAnd
 public class MainActivity extends AppCompatActivity {
 
     private Button bEnterStructureActivity, bEnterVlActivity, bEnterDesignActivity, bEnterAdapterViews,
-                    bEnterDataPersistence, bEnterFragments, bEnterServices;
+                    bEnterDataPersistence, bEnterFragments, bEnterServices, bEnterNetworking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,5 +84,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        bEnterNetworking = (Button) findViewById(R.id.bEnterNetworking);
+        bEnterNetworking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), NetworkAndModelsActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 }
