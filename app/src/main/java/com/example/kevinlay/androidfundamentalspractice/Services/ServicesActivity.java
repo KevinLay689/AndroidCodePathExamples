@@ -79,6 +79,27 @@ public class ServicesActivity extends AppCompatActivity {
 
     }
 
+    /*
+        The following 2 methods are for creating notifications
+
+        createNotification
+            -Creates an empty notification, doesn't use channels because the API level is not 26
+            -Notifications now operate through channels
+
+        createNotification2
+            -Creates notifications with a pending intent.
+            -Pending Intent allows communication back to your app with the notification
+
+        Steps to creating a notification
+            1. Create Intent and wire it to a Pending Intent
+            2. Create a NotificationCompat with a builder
+                 1a. Should set title, text, small icon at minimum
+                 1b. Should also allow some sort of action back to your app at minimum
+            2. Create a Notification Manager
+            3. Call NoficiationManager.notify() when you want to send a notification
+
+     */
+
     private void createNotification(int nId, int iconRes, String title, String body) {
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
