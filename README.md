@@ -1,6 +1,7 @@
 # Android Fundamentals
 
 This is an Android application that showcases the examples from codepath. This gives codepath readers a live visual representation of the code they are viewing.
+Link to codepath: https://guides.codepath.com/android
 
 ## Getting Started
 
