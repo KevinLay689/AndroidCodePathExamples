@@ -25,5 +25,12 @@
         android:layout_height="wrap_content"
         android:text="@string/start_intent_service_alarm_manager_button_text" />
 
+    <Button
+        android:id="@+id/bBeginNotifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/begin_notifications_button_text" />
+
+
 
 </LinearLayout>
