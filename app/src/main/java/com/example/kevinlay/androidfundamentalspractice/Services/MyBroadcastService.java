@@ -7,9 +7,17 @@ import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 
 /**
- * Created by kevinlay on 12/7/17.
+ * Intent Service for communication through a Broadcast Receier
+ *
+ * Major Takeaways
+ * -The sendBroadcast() method sends out the broadcast to any applications that wants to listen to it
+ * -The Intent(Action) is what the LocalBroadcastManager is emitting
+ * -To catch the broadcast, must register a receiver with the IntentFilter the same as the Action the broadCast is emitting
+ *   Ex
+ *         IntentFilter filter = new IntentFilter(MyTestService.ACTION);
+ *         LocalBroadcastManager.getInstance(this).registerReceiver(testReceiver, filter);
+ * -The testReceiver will override onReceive to handle the broadcast data
  */
-
 public class MyBroadcastService extends IntentService {
 
     public static final String ACTION = "com.example.kevinlay.androidfundamentalspractice.Services.MyBroadcastService";

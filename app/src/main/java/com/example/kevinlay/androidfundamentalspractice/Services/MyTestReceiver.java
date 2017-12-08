@@ -3,6 +3,9 @@ package com.example.kevinlay.androidfundamentalspractice.Services;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
+import android.util.Log;
+
+import static android.content.ContentValues.TAG;
 
 
 /**
@@ -11,8 +14,7 @@ import android.os.ResultReceiver;
  * Major Takeaways
  * -Don't override the support library one
  * -Manages communication via method callbacks
- * -When we want to trigger the service to start, pass the IntentService a reference to the reciever and setup its callback interface method
- *
+ * -When we want to trigger the service to start, pass the IntentService a reference to the receiver and setup its callback interface method
  *
  */
 
@@ -39,6 +41,8 @@ public class MyTestReceiver extends ResultReceiver {
     protected void onReceiveResult(int resultCode, Bundle resultData) {
         if (receiver != null) {
             receiver.onReceiveResult(resultCode, resultData);
+        } else{
+            Log.i(TAG, "onReceiveResult: ResultReceiver not registered with Intent Service" );
         }
     }
 }

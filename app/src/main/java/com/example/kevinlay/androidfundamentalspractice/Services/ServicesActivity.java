@@ -59,17 +59,19 @@ public class ServicesActivity extends AppCompatActivity {
 
     }
 
-    // Launching the service
-    public void onStartService(View v) {
-        Intent i = new Intent(this, MyBroadcastService.class);
-        i.putExtra("foo", "bar");
-        startService(i);
-    }
+    /**
+        The following 2 methods are for using an Intent Receiver and Communicating with the Main Activity
+        via a Result Receiver.
+        These 2 methods also go with the MyTestReceiver and MyTestService classes
+
+        Steps to create Intent Receiver and communicate with Result Receiver
+            1. Create the Intent Receiver
+            2. Create the Result Receiver
+            3. Inside MainActivity pass the Intent receiver, an instance of the Result Receiver, with the callback method implemented
+     */
 
     // This method defines how to execute the IntentService
     // Once you call startService() the intent runs the work inside onHandleIntent() and stops itself when its done
-    // Call `launchTestService()` in the activity
-    // to startup the service
     public void launchTestService() {
         // Construct our Intent specifying the Service
         Intent i = new Intent(this, MyTestService.class);
@@ -94,6 +96,26 @@ public class ServicesActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    /**
+        The following 4 methods are for executing a IntentService and communicating with a BroadcastReceiver
+        These 2 methods go with MyBroadcastService
+
+        Steps to create a IntentService with communication through Broadcast Receiver
+            1. Create Intent Service
+            2. Create a BroadcastReceiver in the MainActivity
+                2a. Override its onReceive method to handle callback
+            3. Inside MainActivity, in onResume, Create an IntentFilter for listening to the broadcast
+               and use a LocalBroadcastManager to register the BroadcastReceiver with IntentFilter
+            4. Unregister it in the unPause
+     */
+
+    // Launching the service
+    public void onStartService(View v) {
+        Intent i = new Intent(this, MyBroadcastService.class);
+        i.putExtra("foo", "bar");
+        startService(i);
     }
 
     @Override
@@ -125,6 +147,19 @@ public class ServicesActivity extends AppCompatActivity {
             }
         }
     };
+
+    /**
+        The following 2 classes are in conjunction with the PeriodicService and MyAlarmReceiver class
+        Steps to Achieve a scheduler that triggers a background service at a regular interval
+            1. Create the Intent Service
+            2. Create the Broadcast Receiver
+                2a. The Broadcast Receiver will fire the intent service in its onReceive method
+            3. Register both in the manifest
+                3a. BroadcastReceiver needs property -> android:process=":remote" so that it will run in a separate process so that it will continue to stay alive if the app has closed
+            4. Create the AlarmManager in MainActivity, having it periodically call the pendingIntent
+
+     */
+
     public void cancelAlarm() {
         Intent intent = new Intent(getApplicationContext(), MyAlarmReceiver.class);
         final PendingIntent pIntent = PendingIntent.getBroadcast(this, MyAlarmReceiver.REQUEST_CODE,
