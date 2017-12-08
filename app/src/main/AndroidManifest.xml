@@ -54,6 +54,20 @@
 
         <service android:name=".Services.MyTestService"
             android:exported="false"/>
+
+        <service android:name=".Services.PeriodicService"
+            android:exported="false"/>
+
+        <service
+            android:name=".Services.MyBroadcastService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".Services.MyAlarmReceiver"
+            android:process=":remote" >
+        </receiver>
+
+
     </application>
 
 </manifest>

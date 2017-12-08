@@ -12,4 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/start_intent_service_result_receiver_button_text" />
+
+    <Button
+        android:id="@+id/bStartIntentServiceWithBroadcastReceiver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_intent_service_broadcast_receiver_button_text" />
+
+    <Button
+        android:id="@+id/bStartIntentServiceWithAlarmManager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_intent_service_alarm_manager_button_text" />
+
+
 </LinearLayout>
