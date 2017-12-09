@@ -20,13 +20,42 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  * Animation Activity
  *
  * Major Takeaways
- *
  * -Can set a listener adapter to animations before they start to manage events like ending animation or starting animation
  * -Can choreograph animations together with animatorSets
  * -Should use property animations, but keep in mind the view will change its properties unless reversed
  * -Can use XML to inflate a property animation too
  * -Better control animations by using the onAnimationUpdate Listener, can use animation.getAnimatedValue to for more control
  * -Use setFillAfter="false" for chaining animations, it alters the animation properties, not view
+ *
+ *
+ * Steps to creating animations, see animateAlpha()
+ *      1. Create an Object Animator and set the values ofFloat(view, AnimationType, startValue, endValue)
+ *          1a. Example: ObjectAnimation anim = ObjectAnimator.ofFloat(view, VIEW.ALPHA, 1.0f, 2.0f);
+ *          1b. Can omit the 1st Value param
+ *      2. Set the Object Animator duration with setDuration(Int)
+ *      3. Can set a variety of properties like setRepeatCount, setInterpolator etc
+ *      4. Call ObjectAnimator.start() to begin the animation
+ *
+ * Steps to inflating an animation from XML, see animateFadeOutXml()
+ *      1. Create the XML file, begins with <Object Animator> or <set>, see fade_out.xml for example
+ *      2. Create an animator object
+ *          2a. Example Animator animator = AnimatorInflater.loadAnimator(context, R.anim.fade_out)
+ *      3. Set the target of the animator to a view
+ *          3a. Example animator.setTarget(view)
+ *      4. Start animator with animator.start()
+ *
+ * Steps to creating an AnimatorSet, see animateSetRotateAndScale()
+ *      1. Create Animations
+ *      2. Create Animator Set object
+ *          2a. Example AnimatorSet set = new AnimatorSet()
+ *      3. Add the animations to the Animator set with set.playTogether(anim1, anim2);
+ *      4. Start animatorSet with animatorSet.start()
+ *
+ * Steps to creating an Animator with listeners, see animateSetRotateAndScale()
+ *      1. Create Animations
+ *      2. Create listener with animator.addListener(new AnimationListenerAdapter)
+ *      3. Inside the anonymous listener, override classes such as onAnimationEnd, onAnimationStart, etc
+ *      4. Start animation with animator.start() when completed
  *
  */
 public class AnimationActivity extends AppCompatActivity {

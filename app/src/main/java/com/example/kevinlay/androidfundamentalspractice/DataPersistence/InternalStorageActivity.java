@@ -23,6 +23,7 @@ import java.io.InputStreamReader;
  * Major Takeaways
  *
  * -Adding and removing is typical java i/o nothing really special
+ * 
  * -Adding To Internal Storage
  *      1. Create a fileOutputStream and open the fileName
  *      2. Call fileOutputStream.write(message.getBytes());

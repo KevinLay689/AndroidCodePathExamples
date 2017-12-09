@@ -20,6 +20,28 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * External Storage Activity
+ *
+ * Steps to save to External Storage
+ *      1. Check if external storage is on or read only
+ *      2. Create a File to save to external storage
+ *          2a. Example File file = new File(getExternalFilesDir(filepath), filename)
+ *          2b. This file is where you will save the data to.
+ *      3. Create a FileOutputStream and pass it the file
+ *      4. Write the data to the FileOutputStream with .write(message.getBytes());
+ *          4a. Needs to write in bytes, not string.
+ *      5. Close FileOutputStream
+ *
+ * Steps to loading from External Storage
+ *      1. Create a FileInputStream and pass it the file
+ *      2. Create DataInputStream and pass it the FileInputStream
+ *      3. Create Buffered Reader to read the DataInputStream by passing it as a new InputStreamReader
+ *          3a. Example BufferedReader br = new BufferedReader(new InputStreamReader(in));
+ *      4. Read the Buffered Reader line by line until its null and write the data somewhere
+ *      5. Close DataInputStream
+ */
+
 public class ExternalStorageActivity extends AppCompatActivity {
 
     private Button bLoadExternalStorage, bAddExternalStorage;

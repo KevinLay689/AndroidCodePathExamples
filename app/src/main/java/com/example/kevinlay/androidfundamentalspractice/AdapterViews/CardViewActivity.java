@@ -13,9 +13,14 @@ import java.util.ArrayList;
  * Card View Activity
  *
  * Major Takeaways
+ * -Very similar to recyclerView, technically uses recyclerView
  *
- * -Finish later, very similiar to recyclerview except the single item is a card
- *
+ * Steps to create a Card View
+ *      1. Create XML File
+ *      2. Nest a <android.support.v7.widget.CardView> inside a layout
+ *      3. Nest a Layout inside the Card View
+ *          3a. Create the layout for the Card by adding things to the layout nested inside the Card View
+ *      4. Inflate the view later when you create the Recycler View
  */
 public class CardViewActivity extends AppCompatActivity {
 

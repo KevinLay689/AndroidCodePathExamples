@@ -18,12 +18,15 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  * Major Takeaways
  * -Adding Shared Preferences
  *      1. Get reference to shared preference
+ *          1a. Example SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Context);
  *      2. Get reference to the editor of that shared preference object
+ *          2a. Example SharedPreferences.Editor editor = sharedPreferences.edit();
  *      3. Use editor to add values
  *      4. Use editor.apply() to do asynchronous call to save data
  *
  * -Loading Shared Preference
  *      1. Get reference to shared preferences
+ *          1a. Example SharedPreferences sharedPreference = PreferenceManager.getDefaultSharedPreferences(Context)
  *      2. Use sharedPreference.getString to retrieve value;
  *
  */

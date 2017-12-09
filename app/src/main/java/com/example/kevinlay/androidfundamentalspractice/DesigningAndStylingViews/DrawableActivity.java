@@ -16,11 +16,11 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  * -LayerList: nest each new shape in a seperate <item> tag that contains where to draw the shape
  *
  * -Steps to creating a button are complex
- * 1. Create the drawable for the default shape of button
- * 2. Create a stateList to handle all states of button
- * 3. Create a new style in styles.xml thats parent is parent="@android:style/Widget.Button"
- * 3a. Set the background of that parent to the statelist
- * 4. Apply style to the button with @style/
+ *      1. Create the drawable for the default shape of button
+ *      2. Create a stateList to handle all states of button
+ *      3. Create a new style in styles.xml thats parent is parent="@android:style/Widget.Button"
+ *           3a. Set the background of that parent to the statelist
+ *      4. Apply style to the button with @style/
  */
 
 public class DrawableActivity extends AppCompatActivity {

@@ -47,7 +47,7 @@ public class UsersCardAdapter extends RecyclerView.Adapter<UsersCardAdapter.View
         return users.size();
     }
 
-    // Must bind the views here using the view passed into constructor to target them
+    // Must bind the views here using the view passed into constructor to target them inside onBindViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView tvBalooning;
