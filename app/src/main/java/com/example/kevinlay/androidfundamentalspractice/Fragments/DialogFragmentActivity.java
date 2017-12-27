@@ -50,10 +50,16 @@ public class DialogFragmentActivity extends AppCompatActivity implements  MyAler
 
     }
 
+    /**
+     * Steps to creating a Dialog Fragment
+     */
 
     private void showCustomDialog() {
+        // 1. Get the Fragment Manager
         FragmentManager fragmentManager = getSupportFragmentManager();
+        // 2. Create the instance of the fragment
         MyCustomDialogFragment fragment = MyCustomDialogFragment.newInstance("This is my custom fragment");
+        // 3. Show the fragment using fragment.show and pass it the fragment manager and tag
         fragment.show(fragmentManager, "customDialogTag");
     }
 

@@ -23,6 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  *
  * Major Takeaways
  * -Needs internet permission
+ *
  * Steps to using Retrofit
  *      1. Create interface that is in charge of API endpoints, see GitHubClient class
  *      2. Create model that can hold data being passed back, see GithubRepo class

@@ -11,7 +11,18 @@ import android.view.ViewGroup;
 import com.example.kevinlay.androidfundamentalspractice.R;
 
 /**
- * Created by kevinlay on 12/5/17.
+ * This Fragment shows how to use a callback within a fragment
+ *
+ * Major Takeaways
+ *
+ * Steps to using callback within fragment
+ *
+ *      1. Use a interface inner class within the fragment
+ *      2. Create a instance of this interface as a private field
+ *      3. Inside onAttach, cast the interface into an object using the context passed in
+ *      4. Throw an class exception if the interface is not found
+ *      5. Make the calling activity implement this interface
+ *      6. Handle callback in activity
  */
 
 public class FragmentOne extends android.support.v4.app.Fragment {

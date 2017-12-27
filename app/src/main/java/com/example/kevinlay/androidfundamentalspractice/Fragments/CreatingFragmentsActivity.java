@@ -24,17 +24,22 @@ import com.example.kevinlay.androidfundamentalspractice.R;
 
 public class CreatingFragmentsActivity extends AppCompatActivity implements FragmentOne.OnItemSelectedListener {
 
+    /**
+     * Steps to creating a fragment
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creating_fragments);
-
+        // 1. Create the fragment
         FragmentOne fragmentOne = new FragmentOne();
+        // 2. Get an instance of the fragmentManager and begin its transaction
         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        // frag1 is a tag to later find that element
+        // 3. Add the fragment to XML where the framelayout is and give it a fragment tag
         fragmentTransaction.add(R.id.fragmentOneContainer, fragmentOne, "frag1");
-        // Append this transaction to the backstack
+        // 3a. Optional, add to backstack
         fragmentTransaction.addToBackStack("optional tag");
+        // 4. Commit the fragment
         fragmentTransaction.commit();
 
         // Find fragment by Tag
