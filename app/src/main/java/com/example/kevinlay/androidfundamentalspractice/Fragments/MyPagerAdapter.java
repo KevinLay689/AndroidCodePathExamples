@@ -5,7 +5,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 /**
- * Created by kevinlay on 12/5/17.
+ * Steps to creating a FragmentPagerAdapter
+ *      1. Override Constructor
+ *      2. Override getItem and perform a switch on the position passed in
+ *          2a. In each switch case, return a new instance of the fragment to render
+ *      3. Override getCount
+ *      4. Optional: Override getPageTitle
  */
 
 public class MyPagerAdapter extends FragmentPagerAdapter {

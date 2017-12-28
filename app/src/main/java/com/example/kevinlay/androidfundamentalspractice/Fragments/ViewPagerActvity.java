@@ -16,6 +16,13 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  * -Adapter needs to use supportFragmentManager, therefore the fragments must subclass the right fragment support class
  * -Override getItem and return the new instances of the fragments
  *
+ * Steps to creating a View Pager
+ *      1. Add the View Pager to XML
+ *      2. Target the ViewPager by id
+ *      3. Create the Custom Adapter and pass it the fragmentManager
+ *      4. Set the Viewpager Adapter to the Custom Adapter
+ *
+ *
  */
 public class ViewPagerActvity extends AppCompatActivity implements FragmentOne.OnItemSelectedListener{
 
@@ -25,7 +32,6 @@ public class ViewPagerActvity extends AppCompatActivity implements FragmentOne.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pager_actvity);
-
         ViewPager viewPager = (ViewPager) findViewById(R.id.vpPager);
         adapter = new MyPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
