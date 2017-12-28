@@ -17,6 +17,17 @@ import android.widget.Toast;
  * -Uses onCreateDialog to build the fragment instead of inflating a layout, therefor it doesn't need onCreateView
  * -Pass data back to activity with listeners interface, same as fragment, handle check for listener implementation in onAttach
  * -Pass data back to fragment, see below code sendBackResult()
+ *
+ *
+ * Steps to creating a Alert Dialog Fragment
+ *      1. Create the listener interface that will handle callback
+ *      2. Create static newInstance method that will handle creating the new Fragment
+ *      3. Override on attach and cast the context into the listener and throw ClassCastExeception if not
+ *      4. Override onCreateDialog
+ *          4a. Create the AlertDialog.Builder and pass it a context
+ *          4b. Set the message, title, etc
+ *          4c. Set the positive button to handle the callback interface
+ *          4d. Set the negative button to dismiss the Alert Dialog with dialogInterface.dismiss()
  */
 
 public class MyAlertDialogFragment extends DialogFragment {

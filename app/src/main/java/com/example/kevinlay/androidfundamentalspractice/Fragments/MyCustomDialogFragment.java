@@ -19,6 +19,16 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  * be defined as custom xml, onCreateDialog to configure a standard Dialog class (such as AlertDialog)
  * -All must use the support library namespace
  *
+ *
+ * Steps to creating a Custom Dialog Fragment
+ *      1. Create a static newInstance method for instantiating the fragment
+ *      2. Override onCreateView and inflate the layout
+ *      3. Override onViewCreated and target and handle view data
+ *
+ * Steps to calling the new Custom Dialog Fragment from another Fragment
+ *      1. Get the Fragment Manager
+ *      2. Create the instance of your Custom Dialog Fragment
+ *      3. Show the fragment with fragment.show(fm, "tag")
  */
 
 public class MyCustomDialogFragment extends DialogFragment {
@@ -32,8 +42,8 @@ public class MyCustomDialogFragment extends DialogFragment {
         // Use `newInstance` instead as shown below
     }
 
-
     // Use this static method to add arguments because constructor won't allow it
+    // This is best practice because android uses the empty constructor fragment when re-creating a fragment
     public static MyCustomDialogFragment newInstance(String title) {
         MyCustomDialogFragment fragment = new MyCustomDialogFragment();
         Bundle args = new Bundle();
