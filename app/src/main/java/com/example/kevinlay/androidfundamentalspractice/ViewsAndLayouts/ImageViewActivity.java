@@ -15,6 +15,20 @@ import com.squareup.picasso.Picasso;
  * -Preserve aspect ratio with adjustViewBounds, must allow height or width to be wrap_content
  * -Can use mipmaps as drawable
  * -Must have manifest internet to run picasso
+ * -Processing bitmaps is very labor intensive
+ * -Base 64 encoding is a easy way to turn a bitmap into string
+ * -Example of Bitmap manipulation to run faster
+      public static Bitmap getProfileImage(int sampleSize, String image) {
+         BitmapFactory.Options options = new BitmapFactory.Options();
+         options.inSampleSize = sampleSize;
+         options.inPreferredConfig = Bitmap.Config.RGB_565;
+         byte[] decodedString = Base64.decode(image, Base64.DEFAULT);
+         InputStream is = new ByteArrayInputStream(decodedString);
+         Bitmap decodedByte = BitmapFactory.decodeStream(is, null, options);
+         Bitmap.createScaledBitmap(decodedByte, 100, 100, false);
+
+         return decodedByte;
+        }
  */
 
 public class ImageViewActivity extends AppCompatActivity {
