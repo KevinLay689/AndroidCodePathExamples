@@ -13,7 +13,16 @@ import com.example.kevinlay.androidfundamentalspractice.R;
 import java.util.ArrayList;
 
 /**
- * Created by kevinlay on 12/3/17.
+ * -Steps to creating a RecyclerView
+ *      1. Create Model
+ *      2. Create Adapter
+ *      3. Adapter must extend RecyclerView.Adapter
+ *      4. RecyclerView.Adapter needs a type of RecyclerView.ViewHolder, better to have an inner class be ViewHolder
+ *          4b.Declaration looks like: public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder>
+ *      5. Create ViewHolder Inner class and make constructor call super
+ *      6. Override onBindViewHolder, getCount(), onCreateViewHolder
+ *      7. Must also bind the adapter to the recyclerView in the Activity
+ *          7b.RecyclerView also needs a layoutManager passed into it
  */
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder>{
