@@ -174,7 +174,8 @@ public class ServicesActivity extends AppCompatActivity {
         Steps to create Intent Receiver and communicate with Result Receiver
             1. Create the Intent Receiver
             2. Create the Result Receiver
-            3. Inside MainActivity pass the Intent receiver, an instance of the Result Receiver, with the callback method implemented
+            3. Inside MainActivity pass the Intent receiver an instance of the Result Receiver
+                3a. implement the callback method
      */
 
     // This method defines how to execute the IntentService
@@ -211,11 +212,12 @@ public class ServicesActivity extends AppCompatActivity {
 
         Steps to create a IntentService with communication through Broadcast Receiver
             1. Create Intent Service
+                1a. Inside onHandleIntent, must use LocalBroadcastManager.getInstance(this).sendBroadcast(Intent)
             2. Create a BroadcastReceiver in the MainActivity
                 2a. Override its onReceive method to handle callback
             3. Inside MainActivity, in onResume, Create an IntentFilter for listening to the broadcast
                and use a LocalBroadcastManager to register the BroadcastReceiver with IntentFilter
-            4. Unregister it in the unPause
+            4. Unregister it in the onPause
      */
 
     // Launching the service
