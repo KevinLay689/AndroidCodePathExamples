@@ -29,6 +29,15 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  *
  * MajorTakeaways
  * -See other classes in package and below for creating services with Intent Service
+ *
+ * Steps to creating a basic Service
+ *      1. Subclass the service class and override onStartCommand
+ *          1a. Handle the background service stuff inside onStartCommand
+ *      2. Register this new service in the Manifest
+ *      3. Create an intent in your activity for the new service
+ *      4. Use startService(Intent) to run service
+ *      5. Stop service with stopService(Intent)
+ *      6. Can return START_STICKY or START_NOT_STICKY inside onStartCommand to restart service when its stopped
  */
 
 public class ServicesActivity extends AppCompatActivity {
@@ -171,10 +180,10 @@ public class ServicesActivity extends AppCompatActivity {
         via a Result Receiver.
         These 2 methods also go with the MyTestReceiver and MyTestService classes
 
-        Steps to create Intent Receiver and communicate with Result Receiver
-            1. Create the Intent Receiver
+        Steps to create Intent Service and communicate with Result Receiver
+            1. Create the Intent Service
             2. Create the Result Receiver
-            3. Inside MainActivity pass the Intent receiver an instance of the Result Receiver
+            3. Inside MainActivity pass the Intent Service an instance of the Result Receiver
                 3a. implement the callback method
      */
 

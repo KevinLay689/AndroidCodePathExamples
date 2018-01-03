@@ -42,6 +42,7 @@ public class MyTestService extends IntentService {
         // If a Context object is needed, call getApplicationContext() here.
     }
 
+
     // This method describes what will happen when startService is called from the activity
     @Override
     protected void onHandleIntent(Intent intent) {
