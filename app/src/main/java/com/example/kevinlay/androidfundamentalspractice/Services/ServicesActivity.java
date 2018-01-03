@@ -227,6 +227,13 @@ public class ServicesActivity extends AppCompatActivity {
             3. Inside MainActivity, in onResume, Create an IntentFilter for listening to the broadcast
                and use a LocalBroadcastManager to register the BroadcastReceiver with IntentFilter
             4. Unregister it in the onPause
+
+        Tips on BroadcastReceiver
+            1. Can register dynamically with registerReceiver(receiver, intentFilter) or register in Manifest
+            2. Make broadcasts only local with LocalBroadcastManager in java or android:exported="false" in XML
+            3. Can trigger services to start using BroadcastReceivers inside its onReceive method
+            4. BroadcastReceivers listen for Intent(Action) so Intent filter must match that Intent(Action)
+
      */
 
     // Launching the service
@@ -273,10 +280,37 @@ public class ServicesActivity extends AppCompatActivity {
             2. Create the Broadcast Receiver
                 2a. The Broadcast Receiver will fire the intent service in its onReceive method
             3. Register both in the manifest
-                3a. BroadcastReceiver needs property -> android:process=":remote" so that it will run in a separate process so that it will continue to stay alive if the app has closed
+                3a. BroadcastReceiver needs property -> android:process=":remote" so that it will run
+                in a separate process so that it will continue to stay alive if the app has closed
             4. Create the AlarmManager in MainActivity, having it periodically call the pendingIntent
 
-     */
+
+        Tips for using Alarm Manager
+            1. The PendingIntent will use a BroadcastReceiver
+            2. The AlarmManager will periodically trigger the PendingIntent, so it indirectly calls the BroadcastReciever
+            3. See https://stackoverflow.com/questions/24196890/android-schedule-task-to-execute-at-specific-time-daily for scheduling info.
+
+        Another Example
+             To fire alarm everyday, at 21:32
+
+             private AlarmManager alarmMgr;
+             private PendingIntent alarmIntent;
+             ...
+             alarmMgr = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+             Intent intent = new Intent(context, AlarmReceiver.class);
+             alarmIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
+
+             // Set the alarm to start at 21:32 PM
+             Calendar calendar = Calendar.getInstance();
+             calendar.setTimeInMillis(System.currentTimeMillis());
+             calendar.set(Calendar.HOUR_OF_DAY, 21);
+             calendar.set(Calendar.MINUTE, 32);
+
+             // setRepeating() lets you specify a precise custom interval--in this case,
+             // 1 day
+             alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+             AlarmManager.INTERVAL_DAY, alarmIntent);
+             */
 
     public void cancelAlarm() {
         Intent intent = new Intent(getApplicationContext(), MyAlarmReceiver.class);
@@ -301,5 +335,4 @@ public class ServicesActivity extends AppCompatActivity {
         alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, firstMillis,
                 AlarmManager.INTERVAL_FIFTEEN_MINUTES, pIntent);
     }
-
 }
