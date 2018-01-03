@@ -31,6 +31,12 @@
         android:layout_height="wrap_content"
         android:text="@string/begin_notifications_button_text" />
 
+    <Button
+        android:id="@+id/bBeginBoundService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/begin_bound_service_button_text" />
+
 
 
 </LinearLayout>

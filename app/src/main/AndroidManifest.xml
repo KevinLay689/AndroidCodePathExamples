@@ -62,6 +62,9 @@
             android:name=".Services.MyBroadcastService"
             android:exported="false" />
 
+        <service android:name=".Services.MyBoundService"
+            android:exported="false"/>
+
         <receiver
             android:name=".Services.MyAlarmReceiver"
             android:process=":remote" />

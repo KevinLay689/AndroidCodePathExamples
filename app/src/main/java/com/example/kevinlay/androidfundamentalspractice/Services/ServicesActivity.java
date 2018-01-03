@@ -6,10 +6,13 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ServiceConnection;
 import android.os.Handler;
+import android.os.IBinder;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
@@ -45,7 +48,7 @@ public class ServicesActivity extends AppCompatActivity {
     private MyTestReceiver receiverForTest;
 
     private Button bStartIntentServiceWithResultReceiver, bStartIntentServiceWithBroadcastReceiver, bStartIntentServiceWithAlarmManager,
-                    bBeginNotifications;
+                    bBeginNotifications, bBeginBoundService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +92,14 @@ public class ServicesActivity extends AppCompatActivity {
             }
         });
 
+        bBeginBoundService = (Button) findViewById(R.id.bBeginBoundService);
 
+        bBeginBoundService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startBoundService();
+            }
+        });
 
         setupServiceReceiver();
 
@@ -335,4 +345,63 @@ public class ServicesActivity extends AppCompatActivity {
         alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, firstMillis,
                 AlarmManager.INTERVAL_FIFTEEN_MINUTES, pIntent);
     }
+
+
+    /**
+     * The methods below are in conjunction with MyBoundService
+     *
+     * Steps to registering a Bound Service
+     *      1. Create the Intent for the Bound Service inside onStart()
+     *      2. Bind the Activity to the Service using bindService(Intent, Connection, Context.BIND_AUTO_CREATE)
+     *      3. Create the ServiceConnection
+     *          3a. Inside the ServiceConnection onServiceConnected, cast the IBinder to the Binder created inside the BoundService class
+     *          3b. Use the static getService method on the the new Binder to set the BoundService object
+     *          3c. Set the isBound boolean to true in onServiceConnected and false is onServiceDisconnected
+     *      4. Unbind the connection in onStop using unbindService(Connection)
+     */
+
+    MyBoundService mService;
+    boolean mBound = false;
+
+    private void startBoundService() {
+        if (mBound) {
+            // Call a method from the LocalService.
+            // However, if this call were something that might hang, then this request should
+            // occur in a separate thread to avoid slowing down the activity performance.
+            int num = mService.getRandomNumber();
+            Toast.makeText(this, "number: " + num, Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Bind to LocalService
+        Intent intent = new Intent(this, MyBoundService.class);
+        bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        unbindService(mConnection);
+        mBound = false;
+    }
+
+    private ServiceConnection mConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName className, IBinder service) {
+            // We've bound to LocalService, cast the IBinder and get LocalService instance
+            MyBoundService.LocalBinder binder = (MyBoundService.LocalBinder) service;
+            mService = binder.getService();
+            mBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName arg0) {
+            mBound = false;
+        }
+    };
 }
