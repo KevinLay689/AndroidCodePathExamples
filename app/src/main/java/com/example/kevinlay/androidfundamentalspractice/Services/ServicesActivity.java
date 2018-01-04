@@ -320,9 +320,14 @@ public class ServicesActivity extends AppCompatActivity {
              // 1 day
              alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
              AlarmManager.INTERVAL_DAY, alarmIntent);
-             */
 
-    public void cancelAlarm() {
+        See http://codetheory.in/android-pending-intents/ for pending intent example with Broadcast Receiver
+        Pending Intent Tips
+            1. Pending intents are for triggering intents to fire at a later time
+            2. Useful with Alarm managers and Broadcast Receivers, to schedule a broadcast to fire at a certain time
+     */
+
+    private void cancelAlarm() {
         Intent intent = new Intent(getApplicationContext(), MyAlarmReceiver.class);
         final PendingIntent pIntent = PendingIntent.getBroadcast(this, MyAlarmReceiver.REQUEST_CODE,
                 intent, PendingIntent.FLAG_UPDATE_CURRENT);
