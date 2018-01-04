@@ -8,6 +8,21 @@ import android.os.Parcelable;
  */
 
 public class MySubParcelable implements Parcelable {
+    protected MySubParcelable(Parcel in) {
+    }
+
+    public static final Creator<MySubParcelable> CREATOR = new Creator<MySubParcelable>() {
+        @Override
+        public MySubParcelable createFromParcel(Parcel in) {
+            return new MySubParcelable(in);
+        }
+
+        @Override
+        public MySubParcelable[] newArray(int size) {
+            return new MySubParcelable[size];
+        }
+    };
+
     @Override
     public int describeContents() {
         return 0;
@@ -15,6 +30,5 @@ public class MySubParcelable implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-
     }
 }

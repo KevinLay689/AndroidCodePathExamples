@@ -19,6 +19,7 @@ import android.os.Parcelable;
  *          3c. CreateFromParcel() returns a new Object using the constructor we created that accepts a Parcleable
  *          3d. NewArray() returns an object, given an array.
  *
+ * Retrieve the Parcelable in other activity with getIntent().getParcelableExtra("myDataKey");
  */
 
 public class MyParcelable implements Parcelable {
