@@ -8,7 +8,7 @@ import android.os.Parcelable;
  * Parcelables allow java objects to be passed through IPC like intents
  *
  * Steps to implementing Parcelable
- *      1. Subclass the Parcelable interface
+ *      1. Implement the Parcelable interface
  *          1a. Must override methods describeContents() and writeToParcel()
  *          1b. WriteToParcel() is in charge of saving your values for the object
  *          1c. DescribeContents() can usually just return 0
@@ -20,6 +20,13 @@ import android.os.Parcelable;
  *          3d. NewArray() returns an object, given an array.
  *
  * Retrieve the Parcelable in other activity with getIntent().getParcelableExtra("myDataKey");
+ *
+ * Tips for implementing Parcelable
+ *      -Order matters when you read and write your values to the Parcelable, they must match up in both cases
+ *      -Can only put primitives in the Parcelable, dates must convert to longs, etc
+ *      -No Boolean, best way to store bool is with a byte
+ *          -Example. out.writeByte((byte) (myBoolean ? 1 : 0));
+ *          and retrieve it similarly with myBoolean = in.readByte() != 0;
  */
 
 public class MyParcelable implements Parcelable {

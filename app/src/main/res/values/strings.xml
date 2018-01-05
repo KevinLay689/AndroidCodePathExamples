@@ -70,6 +70,7 @@
     <string name="enter_internal_storage_button_text">Enter Internal Storage Activity</string>
     <string name="enter_external_storage_button_text">Enter External Storage Activity</string>
     <string name="enter_sqlite_database_button_text">Enter Sqlite Database Activity</string>
+    <string name="enter_content_provider_button_text">Enter Content Provider Activity</string>
 
     <string name="load_shared_preference_button_text">Load Preference</string>
     <string name="add_shared_preference_button_text">Add Preference</string>
@@ -106,10 +107,12 @@
     <string name="begin_notifications_button_text">Begin Notifications</string>
     <string name="begin_bound_service_button_text">Begin Bound Service</string>
 
-
     <string name="enter_networking_activity_button_text">Enter Network and Models Activity</string>
     <string name="enter_okhttp_activity_button_text">Enter OkHttp Activity</string>
     <string name="enter_retrofit_activity_button_text">Enter Retrofit Activity</string>
+
+    <string name="retrieve_content_provider">Retrieve Contacts</string>
+    <string name="create_content_provider">Create Content Provider</string>
 
     <string-array name="planets_array">
         <item>Mercury</item>

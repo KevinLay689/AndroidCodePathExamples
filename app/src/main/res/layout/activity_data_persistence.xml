@@ -34,4 +34,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/enter_sqlite_database_button_text" />
+
+    <Button
+        android:id="@+id/bEnterContentProvider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/enter_content_provider_button_text" />
 </LinearLayout>

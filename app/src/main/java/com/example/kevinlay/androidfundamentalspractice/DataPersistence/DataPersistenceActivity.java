@@ -14,7 +14,7 @@ import com.example.kevinlay.androidfundamentalspractice.ViewsAndLayouts.ViewsAnd
 
 public class DataPersistenceActivity extends AppCompatActivity {
 
-    private Button bEnterSharedPref, bEnterInternalStorage, bEnterExternalStorage, bEnterSqliteDatabase;
+    private Button bEnterSharedPref, bEnterInternalStorage, bEnterExternalStorage, bEnterSqliteDatabase, bEnterContentProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,14 @@ public class DataPersistenceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), SqliteDatabaseActivity.class);
+                startActivity(i);
+            }
+        });
+        bEnterContentProvider = (Button) findViewById(R.id.bEnterContentProvider);
+        bEnterContentProvider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), ContentProviderActivity.class);
                 startActivity(i);
             }
         });

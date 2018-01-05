@@ -61,9 +61,9 @@
         <service
             android:name=".Services.MyBroadcastService"
             android:exported="false" />
-
-        <service android:name=".Services.MyBoundService"
-            android:exported="false"/>
+        <service
+            android:name=".Services.MyBoundService"
+            android:exported="false" />
 
         <receiver
             android:name=".Services.MyAlarmReceiver"
@@ -71,7 +71,8 @@
 
         <activity android:name=".NetworkAndModels.NetworkAndModelsActivity" />
         <activity android:name=".NetworkAndModels.OkHttpActivity" />
-        <activity android:name=".NetworkAndModels.RetrofitActivity"></activity>
+        <activity android:name=".NetworkAndModels.RetrofitActivity" />
+        <activity android:name=".DataPersistence.ContentProviderActivity"></activity>
     </application>
 
 </manifest>
