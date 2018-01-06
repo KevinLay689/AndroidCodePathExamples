@@ -3,6 +3,7 @@ package com.example.kevinlay.androidfundamentalspractice.DataPersistence;
 import android.Manifest;
 import android.app.LoaderManager;
 import android.content.ContentResolver;
+import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.pm.PackageManager;
@@ -37,6 +38,28 @@ import com.example.kevinlay.androidfundamentalspractice.R;
          mSelectionArgs,                     // Selection criteria // For adding a ? to SelectionClause and replacing the ?
          mSortOrder);                        // The sort order for the returned rows // ORDER BY
  *
+ *
+ * Steps to Retrieving a Content Provider
+ *      1. Get the Contact Resolver using getContentResolver
+ *      2. Create a Cursor using the Content Resolver
+ *          2a. Cursor cursor = contentResolver.query(URI OR FROM, COLUMNS TO RETURN, WHERE CLAUSE, SELECTIONARGS, ORDER BY)
+ *      3. Iterate through the cursor to get the data
+ *
+ * Steps to use a CursorLoader to run asynchronous queries in background
+ *      1. Implement the LoaderManager.LoaderCallbacks interface, Once loader is initialized it will execute callback methods
+ *          1a. Override onCreateLoader - Pass content provider URI - Worker thread
+ *          1b. Override onLoadFinished - worker thread
+ *          1c. Override onLoaderReset
+ *      2. Initialize the LoaderManager using getLoaderManager().init(LoaderID, Bundle data, LoaderManager Callback Interface)
+ *      3. Inside onCreateLoader - Check the i parameter if it is the same as the LoaderID, if so,
+ *      return a new CursorLoader(Context, Same as Cursor)
+ *      4. When it is done, onLoadFinished will execute and the cursor parameter will need to be iterated through
+ *      to retrieve its information
+ *
+ * Tips for Content Provider
+ *      1. Querying happens on the Main Thread
+ *
+ *
  */
 
 public class ContentProviderActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
@@ -54,6 +77,8 @@ public class ContentProviderActivity extends AppCompatActivity implements Loader
     private String[] mSelectionArguments = new String[] {"Kevin"};
     private String mOrderBy = ContactsContract.Contacts.DISPLAY_NAME;
 
+    private boolean isFirstTimeLoading = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +89,8 @@ public class ContentProviderActivity extends AppCompatActivity implements Loader
         bRetrieveContacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                requestContactPermissionAndRetrieveContacts();
+                //requestContactPermissionAndRetrieveContacts();
+                startContentProviderAsync();
             }
         });
 
@@ -75,17 +101,13 @@ public class ContentProviderActivity extends AppCompatActivity implements Loader
 
             }
         });
-
-        //Activity can contain multiple loaders
-        int loaderId = 0;
-        getLoaderManager().initLoader(loaderId, null, this);
     }
 
     private void retrieveContacts() {
         ContentResolver contentResolver = getContentResolver();
         Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI,
                 mColumnProjection,
-                null,
+                mSelectionClause,
                 null,
                 null);
 
@@ -118,8 +140,15 @@ public class ContentProviderActivity extends AppCompatActivity implements Loader
         }
     }
 
-    private void startContentProvider() {
-
+    private void startContentProviderAsync() {
+        if(isFirstTimeLoading) {
+            //Activity can contain multiple loaders
+            int loaderId = 0;
+            getLoaderManager().initLoader(loaderId, null, this);
+            isFirstTimeLoading = false;
+        } else {
+            getLoaderManager().restartLoader(0, null, this);
+        }
     }
 
     /**
@@ -129,14 +158,25 @@ public class ContentProviderActivity extends AppCompatActivity implements Loader
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         if(i == 0) {
-
+            return new CursorLoader(this, ContactsContract.Contacts.CONTENT_URI, mColumnProjection, null, null, null);
         }
         return null;
     }
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+        String content = "";
 
+        if(cursor.getCount() > 0 && cursor != null) {
+            while (cursor.moveToNext()) {
+                content += cursor.getString(0);
+                content += cursor.getString(1);
+                content += cursor.getString(2);
+            }
+            Log.i(TAG, "onCreate: " + content);
+        } else {
+            Log.i(TAG, "onCreate: No Contacts");
+        }
     }
 
     @Override
