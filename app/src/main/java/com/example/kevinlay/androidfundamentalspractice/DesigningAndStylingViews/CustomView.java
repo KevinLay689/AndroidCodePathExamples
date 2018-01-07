@@ -19,6 +19,17 @@ import java.util.Locale;
  *
  * This class demonstrates a Custom View object that extends the base View class
  *
+ * Steps to creating a Custom View
+ *      1. Subclass View and override the 2 mandatory constructors
+ *          1a. 1st constructor is for creating the view from Java code
+ *          1b. 2nd constructor is for creating the view from XML, hence the AttributeSet
+ *      2. Handle all instantiating of new objects inside the constructors
+ *      3. Override onMeasure()
+ *          3a. This is not mandatory  but highly advised, it constrols how your view will draw itself
+ *          in relation to its parent. This method must call setMeasuredDimension()
+ *      4. Override onDraw
+ *          4a. This method is in charge of drawing the view to the screen, it will draw directly
+ *          to a canvas object
  */
 
 public class CustomView extends View {
