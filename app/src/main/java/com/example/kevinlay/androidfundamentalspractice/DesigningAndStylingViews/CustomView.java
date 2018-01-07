@@ -61,6 +61,29 @@ public class CustomView extends View {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        final Paint.FontMetrics fontMetrics = numberPaint.getFontMetrics();
+
+        // Measure maximum possible width of text.
+        final float maxTextWidth = numberPaint.measureText(MAX_COUNT+"");
+        // Estimate maximum possible height of text.
+        final float maxTextHeight = -fontMetrics.top + fontMetrics.bottom;
+
+        // Add padding to maximum width calculation.
+        final int desiredWidth = Math.round(maxTextWidth + getPaddingLeft() + getPaddingRight());
+
+        // Add padding to maximum height calculation.
+        final int desiredHeight = Math.round(maxTextHeight * 2f + getPaddingTop()  + getPaddingBottom());
+
+        // Reconcile size that this view wants to be with the size the parent will let it be.
+        final int measuredWidth = resolveSize(desiredWidth, widthMeasureSpec);
+        final int measuredHeight = resolveSize(desiredHeight, heightMeasureSpec);
+
+        // Store the final measured dimensions.
+        setMeasuredDimension(measuredWidth, measuredHeight);
+    }
+
+    @Override
     protected void onDraw(Canvas canvas) {
         // Grab canvas dimensions.
         final int canvasWidth = canvas.getWidth();
