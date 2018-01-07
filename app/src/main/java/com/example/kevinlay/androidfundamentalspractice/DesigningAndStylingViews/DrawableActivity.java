@@ -2,6 +2,8 @@ package com.example.kevinlay.androidfundamentalspractice.DesigningAndStylingView
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.kevinlay.androidfundamentalspractice.R;
 
@@ -25,9 +27,31 @@ import com.example.kevinlay.androidfundamentalspractice.R;
 
 public class DrawableActivity extends AppCompatActivity {
 
+    Button bIncrementButton, bResetButton;
+
+    CustomView customView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawable);
+
+        bIncrementButton = (Button) findViewById(R.id.bIncrementButton);
+        bResetButton = (Button) findViewById(R.id.bResetButton);
+        customView = (CustomView) findViewById(R.id.customView);
+
+        bIncrementButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                customView.increment();
+            }
+        });
+
+        bResetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                customView.reset();
+            }
+        });
     }
 }

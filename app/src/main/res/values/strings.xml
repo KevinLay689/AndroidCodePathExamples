@@ -114,6 +114,9 @@
     <string name="retrieve_content_provider">Retrieve Contacts</string>
     <string name="create_content_provider">Create Content Provider</string>
 
+    <string name="increment_button">Increment</string>
+    <string name="reset_button">Reset</string>
+
     <string-array name="planets_array">
         <item>Mercury</item>
         <item>Venus</item>

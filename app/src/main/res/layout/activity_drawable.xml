@@ -44,4 +44,21 @@
         android:layout_height="wrap_content"
         android:text="@string/nice_button_text" />
 
+    <Button
+        android:id="@+id/bIncrementButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/increment_button"/>
+
+    <Button
+        android:id="@+id/bResetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_button"/>
+
+    <com.example.kevinlay.androidfundamentalspractice.DesigningAndStylingViews.CustomView
+        android:id="@+id/customView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
