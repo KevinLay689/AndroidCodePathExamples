@@ -54,8 +54,4 @@ public interface GithubClient {
     @FormUrlEncoded
     @POST("some/endpoint")
     Call<GithubRepo> someEndpoint(@FieldMap Map<String, String> names);
-
-
-
-
 }

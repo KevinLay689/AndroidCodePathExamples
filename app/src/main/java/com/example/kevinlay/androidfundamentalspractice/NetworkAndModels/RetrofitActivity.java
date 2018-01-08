@@ -7,11 +7,19 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitMovie.MovieClient;
+import com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitMovie.MovieModel;
+import com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitMovie.Result;
 import com.example.kevinlay.androidfundamentalspractice.R;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.HttpUrl;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -37,6 +45,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitActivity extends AppCompatActivity {
 
+    private static final String TAG = "RetrofitActivity";
+
+    private static final String movieApiKey = "c414f6748521b1f9e997639b2c7c92d9";
+
     private ListView lvRetrofitRepos;
 
     @Override
@@ -44,7 +56,60 @@ public class RetrofitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrofit);
         lvRetrofitRepos = (ListView) findViewById(R.id.lvRetrofitRepos);
-        startRetrofit();
+        //startRetrofit();
+        startMovieRetrofit();
+    }
+
+    private void startMovieRetrofit() {
+
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        httpClient.addInterceptor(new Interceptor() {
+            @Override
+            public okhttp3.Response intercept(Chain chain) throws IOException {
+                Request original = chain.request();
+                HttpUrl originalHttpUrl = original.url();
+
+                HttpUrl url = originalHttpUrl.newBuilder()
+                        .addQueryParameter("apikey", "your-actual-api-key")
+                        .build();
+
+                // Request customization: add request headers
+                Request.Builder requestBuilder = original.newBuilder()
+                        .url(url);
+
+                Request request = requestBuilder.build();
+                return chain.proceed(request);
+            }
+        });
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://api.themoviedb.org/3/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(httpClient.build())
+                .build();
+
+        MovieClient movieClient = retrofit.create(MovieClient.class);
+        Call<MovieModel> call = movieClient.getRecentMovies();
+
+        call.enqueue(new Callback<MovieModel>() {
+            @Override
+            public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
+                MovieModel movieModel = response.body();
+//                Log.i(TAG, "onResponse: " +response.body());
+//
+//                for(int i = 0; i < movieModel.getResults().size(); i++) {
+//                    Result result = movieModel.getResults().get(i);
+//                    Log.i(TAG, "onResponse: Results movie name " +
+//                            result.getTitle() + "Date released: " +
+//                            result.getReleaseDate());
+//                }
+            }
+
+            @Override
+            public void onFailure(Call<MovieModel> call, Throwable t) {
+
+            }
+        });
     }
 
     private void startRetrofit() {
