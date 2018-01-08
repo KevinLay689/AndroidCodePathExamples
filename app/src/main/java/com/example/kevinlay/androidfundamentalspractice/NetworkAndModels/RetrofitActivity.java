@@ -62,52 +62,60 @@ public class RetrofitActivity extends AppCompatActivity {
 
     private void startMovieRetrofit() {
 
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        httpClient.addInterceptor(new Interceptor() {
-            @Override
-            public okhttp3.Response intercept(Chain chain) throws IOException {
-                Request original = chain.request();
-                HttpUrl originalHttpUrl = original.url();
-
-                HttpUrl url = originalHttpUrl.newBuilder()
-                        .addQueryParameter("apikey", "your-actual-api-key")
-                        .build();
-
-                // Request customization: add request headers
-                Request.Builder requestBuilder = original.newBuilder()
-                        .url(url);
-
-                Request request = requestBuilder.build();
-                return chain.proceed(request);
-            }
-        });
+//        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+//        httpClient.addInterceptor(new Interceptor() {
+//            @Override
+//            public okhttp3.Response intercept(Chain chain) throws IOException {
+//                Request original = chain.request();
+//                HttpUrl originalHttpUrl = original.url();
+//
+//                HttpUrl url = originalHttpUrl.newBuilder()
+//                        .addQueryParameter("apikey", "your-actual-api-key")
+//                        .build();
+//
+//                // Request customization: add request headers
+//                Request.Builder requestBuilder = original.newBuilder()
+//                        .url(url);
+//
+//                Request request = requestBuilder.build();
+//                return chain.proceed(request);
+//            }
+//        });
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.themoviedb.org/3/")
+                .baseUrl("https://api.themoviedb.org/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(httpClient.build())
+                //.client(httpClient.build())
                 .build();
 
         MovieClient movieClient = retrofit.create(MovieClient.class);
-        Call<MovieModel> call = movieClient.getRecentMovies();
+        Call<MovieModel> call = movieClient.getRecentMovies(movieApiKey);
+//        Log.i(TAG, "startMovieRetrofit: " + call.request().url());
 
         call.enqueue(new Callback<MovieModel>() {
             @Override
             public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
                 MovieModel movieModel = response.body();
-//                Log.i(TAG, "onResponse: " +response.body());
-//
-//                for(int i = 0; i < movieModel.getResults().size(); i++) {
-//                    Result result = movieModel.getResults().get(i);
-//                    Log.i(TAG, "onResponse: Results movie name " +
-//                            result.getTitle() + "Date released: " +
-//                            result.getReleaseDate());
-//                }
+                Log.i(TAG, "onResponse: " + response.body());
+
+                ArrayList<String> movies = new ArrayList<>();
+
+                for(int i = 0; i < movieModel.getResults().size(); i++) {
+                    Result result = movieModel.getResults().get(i);
+                    Log.i(TAG, "onResponse: Results movie name " +
+                            result.getTitle() + "Date released: " +
+                            result.getReleaseDate());
+                    String singleMovie = "Date Released: " + result.getReleaseDate() + " Movie name: " + result.getTitle();
+                    movies.add(singleMovie);
+                }
+
+                ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.simple_single_item, movies);
+                lvRetrofitRepos.setAdapter(itemsAdapter);
             }
 
             @Override
             public void onFailure(Call<MovieModel> call, Throwable t) {
-
+                Log.i(TAG, "onFailure: " + t.toString());
             }
         });
     }

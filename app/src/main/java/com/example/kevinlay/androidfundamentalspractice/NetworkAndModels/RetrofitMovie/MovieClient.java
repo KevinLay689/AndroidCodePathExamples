@@ -15,6 +15,6 @@ public interface MovieClient {
 //    @GET("/movie/upcoming?api_key={apiKey}&language=en-US&page=1/")
 //    Call<List<MovieModel>> getRecentMovies(@Path("apiKey") String apiKey);
 
-    @GET("/movie/upcoming")
-    Call<MovieModel> getRecentMovies();
+    @GET("/3/movie/upcoming")
+    Call<MovieModel> getRecentMovies(@Query("api_key") String apiKey);
 }
