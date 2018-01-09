@@ -28,4 +28,11 @@
         android:layout_margin="10dp"
         android:text="@string/enter_style_and_themes_view_button_text" />
 
+    <Button
+        android:id="@+id/bEnterCustomText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/enter_custom_text_button_text" />
+
 </LinearLayout>

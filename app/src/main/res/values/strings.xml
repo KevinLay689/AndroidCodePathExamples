@@ -44,6 +44,7 @@
     <string name="enter_drawable_view_button_text">Enter Drawable View Activity</string>
     <string name="enter_animations_view_button_text">Enter Animation View Activity</string>
     <string name="enter_style_and_themes_view_button_text">Enter Styles and Themes Activity</string>
+    <string name="enter_custom_text_button_text">Enter Custom TextView Font Activity</string>
 
     <string name="solid_color_shape_text_view_text">This text has a custom drawable background</string>
     <string name="gradient_color_shape_text_view_text">This text has a custom gradient drawable background</string>
@@ -116,6 +117,9 @@
 
     <string name="increment_button">Increment</string>
     <string name="reset_button">Reset</string>
+
+    <string name="custom_font_text_view_text">This text has custom font using a Text View</string>
+    <string name="custom_font_custom_view_text">This text has custom font using a Custom View</string>
 
     <string-array name="planets_array">
         <item>Mercury</item>

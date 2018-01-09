@@ -6,11 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.kevinlay.androidfundamentalspractice.DesigningAndStylingViews.CustomFont.CustomFontActivity;
 import com.example.kevinlay.androidfundamentalspractice.R;
 
 public class DesigningAndStylingViewActivity extends AppCompatActivity {
 
-    private Button bEnterDrawables, bEnterAnimations, bEnterStylesAndThemes;
+    private Button bEnterDrawables, bEnterAnimations, bEnterStylesAndThemes, bEnterCustomText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,15 @@ public class DesigningAndStylingViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), StylesAndThemesActivity.class);
+                startActivity(i);
+            }
+        });
+
+        bEnterCustomText = (Button) findViewById(R.id.bEnterCustomText);
+        bEnterCustomText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), CustomFontActivity.class);
                 startActivity(i);
             }
         });

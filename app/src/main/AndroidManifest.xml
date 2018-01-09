@@ -73,7 +73,8 @@
         <activity android:name=".NetworkAndModels.NetworkAndModelsActivity" />
         <activity android:name=".NetworkAndModels.OkHttpActivity" />
         <activity android:name=".NetworkAndModels.RetrofitActivity" />
-        <activity android:name=".DataPersistence.ContentProviderActivity"></activity>
+        <activity android:name=".DataPersistence.ContentProviderActivity" />
+        <activity android:name=".DesigningAndStylingViews.CustomFont.CustomFontActivity"></activity>
     </application>
 
 </manifest>
