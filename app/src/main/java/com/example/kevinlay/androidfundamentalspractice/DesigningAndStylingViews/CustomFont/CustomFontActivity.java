@@ -16,6 +16,6 @@ public class CustomFontActivity extends AppCompatActivity {
         setContentView(R.layout.activity_custom_font);
 
         tvCustomFontTextView = (TextView) findViewById(R.id.tvCustomFontTextView);
-        tvCustomFontTextView.setTypeface(FontUtil.getTypeFace(CustomFontActivity.this, "Reality-Sunday-light.ttf"));
+        tvCustomFontTextView.setTypeface(FontUtil.getTypeFace(CustomFontActivity.this, FontUtil.REALITY_SUNDAY));
     }
 }

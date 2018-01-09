@@ -18,7 +18,7 @@ public class CustomFontCustomView extends android.support.v7.widget.AppCompatTex
     public CustomFontCustomView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
-        Typeface typeface = FontUtil.getTypeFace(context, "Reality-Sunday-light.ttf");
+        Typeface typeface = FontUtil.getTypeFace(context, FontUtil.REALITY_SUNDAY);
         setTypeface(typeface);
     }
 }
