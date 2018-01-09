@@ -8,7 +8,7 @@ import com.example.kevinlay.androidfundamentalspractice.R;
 
 public class CustomFontActivity extends AppCompatActivity {
 
-    private TextView tvCustomFontTextView, tvCustomFontCustomView;
+    private TextView tvCustomFontTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,10 +16,6 @@ public class CustomFontActivity extends AppCompatActivity {
         setContentView(R.layout.activity_custom_font);
 
         tvCustomFontTextView = (TextView) findViewById(R.id.tvCustomFontTextView);
-        tvCustomFontCustomView = (TextView) findViewById(R.id.tvCustomFontCustomView);
-
-
         tvCustomFontTextView.setTypeface(FontUtil.getTypeFace(CustomFontActivity.this, "Reality-Sunday-light.ttf"));
-
     }
 }

@@ -14,7 +14,7 @@
         android:layout_margin="10dp"
         android:text="@string/custom_font_text_view_text" />
 
-    <TextView
+    <com.example.kevinlay.androidfundamentalspractice.DesigningAndStylingViews.CustomFont.CustomFontCustomView
         android:id="@+id/tvCustomFontCustomView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
