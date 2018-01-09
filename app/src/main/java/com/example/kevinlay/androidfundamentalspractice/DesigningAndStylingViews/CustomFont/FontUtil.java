@@ -12,6 +12,8 @@ import java.util.HashMap;
 public class FontUtil {
 
     public static final String REALITY_SUNDAY = "Reality-Sunday-light.ttf";
+    public static final String SKINNY_THINGS = "Skinny-Things.ttf";
+    public static final String SKINNY_THINGS_ITALIC = "Skinny-Things-Italic.ttf";
 
     private static HashMap<String, Typeface> fontCache = new HashMap<>();
 
