@@ -6,6 +6,16 @@ import android.widget.TextView;
 
 import com.example.kevinlay.androidfundamentalspractice.R;
 
+/**
+ * This is the Custom Font Activity
+ *
+ * 2 Major ways to achieve custom fonts
+ *      1. Quick and dirty way is to get a reference to the view, then apply the custom font to it
+ *      using the FontUtil caching class
+ *      2. Second and better way is to subclass TextView and set the Typeface for the whole view
+ *      inside the constructor
+ */
+
 public class CustomFontActivity extends AppCompatActivity {
 
     private TextView tvCustomFontTextView;

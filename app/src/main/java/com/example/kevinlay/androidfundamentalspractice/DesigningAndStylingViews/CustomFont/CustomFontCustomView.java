@@ -7,7 +7,20 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 /**
- * Created by kevinlay on 1/9/18.
+ * This is a Custom View class that extends TextView
+ *
+ * -Purpose of this class is to extend TextView and provide a way to always have a custom font with the text
+ *
+ * Steps to creating a Custom View class that extends TextView
+ *      1. Subclass the support TextView class
+ *      2. Override the constructors
+ *          2a. Inside constructors call method to handle applying custom fonts
+ *      3. Create Custom font method
+ *          3a. Obtain the textStyle passed in by using attrs.getAttributeIntValue(Schema, "textStyle", defaultValue)
+ *          3b. The getAttributeIntValue() returns a int that represents the textStyle the user has entered
+ *      4. Perform a switch statement on the textStyle to determine which font to apply
+ *          4a. Return the correct Typeface Value using the FontUtil caching class
+ *      5. Set the typeface
  */
 
 public class CustomFontCustomView extends android.support.v7.widget.AppCompatTextView {
@@ -25,6 +38,7 @@ public class CustomFontCustomView extends android.support.v7.widget.AppCompatTex
     }
 
     private void applyCustomFont(Context context, AttributeSet attrs) {
+        // last parameter is default value
         int textStyle = attrs.getAttributeIntValue(ANDROID_SCHEMA, "textStyle", Typeface.NORMAL);
 
         Typeface customFont = selectTypeface(context, textStyle);
