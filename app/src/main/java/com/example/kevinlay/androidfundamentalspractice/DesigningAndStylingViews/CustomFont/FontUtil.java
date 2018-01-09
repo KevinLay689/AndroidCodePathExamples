@@ -13,6 +13,7 @@ import java.util.HashMap;
  *      2. Create static Typeface method
  *          2a. The method will either create a new Typeface and add it to the Hashmap, or retrieve a
  *          cached Typeface and return it
+ *      3. Should potentially wrap the Strings in a StringDef
  */
 
 public class FontUtil {
