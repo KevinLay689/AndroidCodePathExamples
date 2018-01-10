@@ -7,19 +7,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitGithub.GithubClient;
+import com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitGithub.GithubRepo;
 import com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitMovie.MovieClient;
 import com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitMovie.MovieModel;
 import com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitMovie.Result;
 import com.example.kevinlay.androidfundamentalspractice.R;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.HttpUrl;
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -1,4 +1,4 @@
-package com.example.kevinlay.androidfundamentalspractice.NetworkAndModels;
+package com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitGithub;
 
 /**
  * GithubRepo Class

@@ -1,12 +1,11 @@
 package com.example.kevinlay.androidfundamentalspractice.NetworkAndModels;
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitGithub.GitUser;
 import com.example.kevinlay.androidfundamentalspractice.R;
 import com.google.gson.Gson;
 
@@ -17,12 +16,10 @@ import java.io.IOException;
 
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.Headers;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import okhttp3.ResponseBody;
 
 /**
  * OkHttp Activity

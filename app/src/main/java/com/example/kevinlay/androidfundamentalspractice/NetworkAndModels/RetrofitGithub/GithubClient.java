@@ -1,4 +1,6 @@
-package com.example.kevinlay.androidfundamentalspractice.NetworkAndModels;
+package com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitGithub;
+
+import com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitGithub.GithubRepo;
 
 import java.util.List;
 import java.util.Map;

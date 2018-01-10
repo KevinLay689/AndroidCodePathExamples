@@ -1,4 +1,4 @@
-package com.example.kevinlay.androidfundamentalspractice.NetworkAndModels;
+package com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.RetrofitGithub;
 
 /**
  * Created by kevinlay on 12/8/17.
