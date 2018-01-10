@@ -37,6 +37,14 @@ import okhttp3.ResponseBody;
  * -When processing network requests, check if the response is successful with if(!response.isSuccessfull)
  *      -Response also comes in headers as a list
  *
+ * Steps to using OkHttp
+ *      1. Create the OkHttpClient
+ *      2. Create a Request using a Request.Builder()
+ *          2a. Builder needs URL, optional: Header, Body, etc
+ *      3. Build the Request with .build()
+ *      4. Use the OkHttpClient and use the .newCall(Request).enqueue(new Callback)
+ *      5. Handle the response type in onResponse and failure in onFailure
+ *
  */
 
 public class OkHttpActivity extends AppCompatActivity {
