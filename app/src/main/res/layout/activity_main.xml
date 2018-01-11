@@ -55,4 +55,10 @@
         android:layout_height="wrap_content"
         android:text="@string/enter_networking_activity_button_text" />
 
+    <Button
+        android:id="@+id/bEnterDataBinding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_data_binding_activity_button_text" />
+
 </LinearLayout>

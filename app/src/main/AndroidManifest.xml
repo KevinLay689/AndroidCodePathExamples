@@ -74,7 +74,8 @@
         <activity android:name=".NetworkAndModels.OkHttpActivity" />
         <activity android:name=".NetworkAndModels.RetrofitActivity" />
         <activity android:name=".DataPersistence.ContentProviderActivity" />
-        <activity android:name=".DesigningAndStylingViews.CustomFont.CustomFontActivity"></activity>
+        <activity android:name=".DesigningAndStylingViews.CustomFont.CustomFontActivity" />
+        <activity android:name=".databinding.BindingActivity"></activity>
     </application>
 
 </manifest>

@@ -121,6 +121,8 @@
     <string name="custom_font_text_view_text">This text has custom font using a Text View</string>
     <string name="custom_font_custom_view_text">This text has custom font using a Custom View</string>
 
+    <string name="enter_data_binding_activity_button_text">Enter Data Binding Activity</string>
+
     <string-array name="planets_array">
         <item>Mercury</item>
         <item>Venus</item>

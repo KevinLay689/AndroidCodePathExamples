@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.kevinlay.androidfundamentalspractice.AdapterViews.AdapterViewActivity;
+import com.example.kevinlay.androidfundamentalspractice.databinding.BindingActivity;
 import com.example.kevinlay.androidfundamentalspractice.DataPersistence.DataPersistenceActivity;
 import com.example.kevinlay.androidfundamentalspractice.DesigningAndStylingViews.DesigningAndStylingViewActivity;
 import com.example.kevinlay.androidfundamentalspractice.Fragments.FragmentsActvity;
@@ -18,7 +19,7 @@ import com.example.kevinlay.androidfundamentalspractice.ViewsAndLayouts.ViewsAnd
 public class MainActivity extends AppCompatActivity {
 
     private Button bEnterStructureActivity, bEnterVlActivity, bEnterDesignActivity, bEnterAdapterViews,
-                    bEnterDataPersistence, bEnterFragments, bEnterServices, bEnterNetworking;
+                    bEnterDataPersistence, bEnterFragments, bEnterServices, bEnterNetworking, bEnterDataBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +91,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), NetworkAndModelsActivity.class);
+                startActivity(i);
+            }
+        });
+
+        bEnterDataBinding = (Button) findViewById(R.id.bEnterDataBinding);
+        bEnterDataBinding.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), BindingActivity.class);
                 startActivity(i);
             }
         });
