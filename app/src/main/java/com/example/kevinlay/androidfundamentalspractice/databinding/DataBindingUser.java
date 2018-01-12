@@ -38,6 +38,9 @@ import com.android.databinding.library.baseAdapters.BR;
  *          3a. Example android:onClick="@{(view) -> presenter.onSaveClick(view, user)}"
  *          3b.  Listener bindings provide two choices for listener parameters: you can either ignore
  *          all parameters to the method or name all of them
+ *      4. Use this when the method definition may not match the event method, an exmaple is
+ *      android:onClick="@{(view) -> presenter.onSaveClick(view, user)}" the onSaveClick will not just use a method
+ *      with the view parameter, but it also wants a user paramater that can be passed in as a variable
  */
 
 public class DataBindingUser extends BaseObservable {
