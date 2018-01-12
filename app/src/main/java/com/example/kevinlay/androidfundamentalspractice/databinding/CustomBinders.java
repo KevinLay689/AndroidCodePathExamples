@@ -7,12 +7,16 @@ import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 
 /**
- * Created by kevinlay on 1/11/18.
+ * Steps to creating a Binding Adapter
+ *      1. Annotate the method with @BindingAdapter
+ *      2. Create a static method that can be referenced in the XML
+ *      3. Inside the XML, add a namespace for bind:
+ *          3a. Example xmlns:bind="http://schemas.android.com/apk/res-auto"
+ *      4. Reference the BindingAdapter class and set it equal to the value of your parameter
+ *          4a. Example bind:imageUri="@{user.url}"
  */
 
-public class MethodHandler {
-
-    public String url = "https://developer.android.com/_static/images/android/touchicon-180.png";
+public class CustomBinders {
 
     @BindingAdapter({"bind:imageUri"})
     public static void loadImage(ImageView view, String url) {

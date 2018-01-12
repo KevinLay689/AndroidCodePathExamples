@@ -5,9 +5,6 @@
         <variable
             name="user"
             type="com.example.kevinlay.androidfundamentalspractice.databinding.DataBindingUser"/>
-        <variable
-            name="handler"
-            type="com.example.kevinlay.androidfundamentalspractice.databinding.MethodHandler"/>
     </data>
     <LinearLayout
         android:orientation="vertical"
@@ -30,7 +27,7 @@
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            bind:imageUri="@{handler.url}"/>
+            bind:imageUri="@{user.url}"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

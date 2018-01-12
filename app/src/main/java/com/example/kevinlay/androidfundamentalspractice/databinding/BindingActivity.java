@@ -39,8 +39,5 @@ public class BindingActivity extends AppCompatActivity {
         ActivityBindingBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_binding);
         DataBindingUser user = new DataBindingUser();
         binding.setUser(user);
-
-        MethodHandler methodHandler = new MethodHandler();
-        binding.setHandler(methodHandler);
     }
 }

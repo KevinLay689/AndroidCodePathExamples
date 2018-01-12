@@ -10,10 +10,22 @@ import android.widget.Toast;
 import com.android.databinding.library.baseAdapters.BR;
 
 /**
- * Created by kevinlay on 1/11/18.
+ * This class is for 2 way binding
+ *
+ * -Extending BaseObservable allows the user to use things like notifyPropertyChanged() to mark the view
+ * as dirty to be updated.
+ *
+ * Steps to using 2 way binding with BaseObservable.
+ *      1. In your model extend the BaseObservable class
+ *      2. Annotate the getter of your data property
+ *          2a. This will generate a BR class file in the module package
+ *          2b. This BR class file can be referenced later in order to notify the view has changed
+ *      3. Inside the setter, use notifyPropertyChanged(BR.name) to update the view.
  */
 
-public class DataBindingUser extends BaseObservable{
+public class DataBindingUser extends BaseObservable {
+
+    public String url = "https://developer.android.com/_static/images/android/touchicon-180.png";
 
     private String firstName = "";
     private String lastName = "";
