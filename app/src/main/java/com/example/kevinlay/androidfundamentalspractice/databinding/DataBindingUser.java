@@ -29,6 +29,15 @@ import com.android.databinding.library.baseAdapters.BR;
  *      3. Use this over Listener Bindings when you want the method to be generated when the
  *      actual listener implementation is created when the data is bound.
  *          3a. If you prefer to evaluate the expression when the event happens, you should use listener binding
+ *
+ * Steps for using Listener Bindings for onClick
+ *      1. Create the onClick method in one of the variables passed to the layout
+ *      2. In XML, set the onClick attibute using a lambda expression
+ *          2a. Example android:onClick="@{() -> presenter.onSaveClick(task)}"
+ *      3. Variables can be passed in as parameters for the method
+ *          3a. Example android:onClick="@{(view) -> presenter.onSaveClick(view, user)}"
+ *          3b.  Listener bindings provide two choices for listener parameters: you can either ignore
+ *          all parameters to the method or name all of them
  */
 
 public class DataBindingUser extends BaseObservable {
@@ -85,6 +94,10 @@ public class DataBindingUser extends BaseObservable {
 
     public void clickForNameToast(View view) {
         Toast.makeText(view.getContext(), "Full name is: " + firstName + " " + lastName, Toast.LENGTH_SHORT ).show();
+    }
+
+    public void clickForNameToastListenerBinding(View view, DataBindingUser user) {
+        Toast.makeText(view.getContext(), "Full name is: " + user.firstName + " " + user.lastName, Toast.LENGTH_SHORT ).show();
     }
 
     public String getFirstName() {

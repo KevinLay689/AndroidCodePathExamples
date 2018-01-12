@@ -33,5 +33,11 @@
             android:layout_height="wrap_content"
             android:text="Click me"
             android:onClick="@{user::clickForNameToast}"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Click me Listener Binding"
+            android:onClick="@{(view) -> user.clickForNameToastListenerBinding(view, user)}"/>
     </LinearLayout>
 </layout>
