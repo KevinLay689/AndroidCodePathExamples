@@ -21,6 +21,14 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  *      4. Inside the Activity target the generated Binding class and use
  *      DataBindingUtil.setContentView(context, layout) to set the view layout
  *          4a. Set the <variables/> objects by creating the object, then using the setName() operator on them
+ *
+ * Steps for using Method References for onClick
+ *      1. Create the onClick method in one of the variables passed to the layout
+ *      2. In XML, set the onClick attribute to @{variableName::onClickMethod}
+ *          2a. Example android:onClick="@{user::clickForNameToast}"
+ *      3. Use this over Listener Bindings when you want the method to be generated when the
+ *      actual listener implementation is created when the data is bound.
+ *          3a. If you prefer to evaluate the expression when the event happens, you should use listener binding
  */
 
 public class BindingActivity extends AppCompatActivity {

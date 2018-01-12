@@ -4,6 +4,8 @@ import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Toast;
 
 import com.android.databinding.library.baseAdapters.BR;
 
@@ -60,6 +62,10 @@ public class DataBindingUser extends BaseObservable{
             notifyPropertyChanged(BR.formattedName);
         }
     };
+
+    public void clickForNameToast(View view) {
+        Toast.makeText(view.getContext(), "Full name is: " + firstName + " " + lastName, Toast.LENGTH_SHORT ).show();
+    }
 
     public String getFirstName() {
         return this.firstName;
