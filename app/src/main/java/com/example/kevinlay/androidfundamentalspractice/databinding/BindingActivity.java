@@ -11,6 +11,7 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  *
  * -If the activity is in a package, the package name must be lowercase in order to target the Binding class
  * otherwise there will be dex errors
+ * -See android documentation for more info: https://developer.android.com/topic/libraries/data-binding/index.html
  *
  * Steps to using Data Binding
  *      1. Enable Data Binding in app.gradle using
