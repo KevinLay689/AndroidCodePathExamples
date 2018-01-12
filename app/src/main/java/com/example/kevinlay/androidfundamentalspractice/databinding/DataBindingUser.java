@@ -20,7 +20,15 @@ import com.android.databinding.library.baseAdapters.BR;
  *      2. Annotate the getter of your data property
  *          2a. This will generate a BR class file in the module package
  *          2b. This BR class file can be referenced later in order to notify the view has changed
- *      3. Inside the setter, use notifyPropertyChanged(BR.name) to update the view.
+ *      3. Inside the setter, use notifyPropertyChanged(BR.name) to update the view
+ *
+ * Steps for using Method References for onClick
+ *      1. Create the onClick method in one of the variables passed to the layout
+ *      2. In XML, set the onClick attribute to @{variableName::onClickMethod}
+ *          2a. Example android:onClick="@{user::clickForNameToast}"
+ *      3. Use this over Listener Bindings when you want the method to be generated when the
+ *      actual listener implementation is created when the data is bound.
+ *          3a. If you prefer to evaluate the expression when the event happens, you should use listener binding
  */
 
 public class DataBindingUser extends BaseObservable {
