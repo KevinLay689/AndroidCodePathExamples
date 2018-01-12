@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
     <data>
-        <variable name="user" type="com.example.kevinlay.androidfundamentalspractice.databinding.DataBindingUser"/>
+        <variable
+            name="user"
+            type="com.example.kevinlay.androidfundamentalspractice.databinding.DataBindingUser"/>
+        <variable
+            name="handler"
+            type="com.example.kevinlay.androidfundamentalspractice.databinding.MethodHandler"/>
     </data>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView android:layout_width="wrap_content"
+        <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{user.firstName}"/>
-        <TextView android:layout_width="wrap_content"
+            android:hint="First name"
+            android:addTextChangedListener="@{user.firstNameChanged}"/>
+        <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{user.lastName}"/>
+            android:hint="Last name"
+            android:addTextChangedListener="@{user.lastNameChanged}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.formattedName}"/>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            bind:imageUri="@{handler.url}"/>
     </LinearLayout>
 </layout>
