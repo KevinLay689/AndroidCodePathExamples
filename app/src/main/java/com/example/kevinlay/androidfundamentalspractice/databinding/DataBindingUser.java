@@ -41,14 +41,23 @@ import com.android.databinding.library.baseAdapters.BR;
  *      4. Use this when the method definition may not match the event method, an exmaple is
  *      android:onClick="@{(view) -> presenter.onSaveClick(view, user)}" the onSaveClick will not just use a method
  *      with the view parameter, but it also wants a user paramater that can be passed in as a variable
+ *
+ * Steps for using a Ternary Operator inside XML
+ *      1. Inside a @{} tag, use the ternary operator with easy to read logic
+ *          1a. Example user.isUser ? user.registerYes : user.registerNo
+ *      2. Use easy to read logic, it is impossible to test this logic
+ *
  */
 
 public class DataBindingUser extends BaseObservable {
 
     public String url = "https://developer.android.com/_static/images/android/touchicon-180.png";
+    public String registerYes = "Yes Register";
+    public String registerNo = "No Register";
 
     private String firstName = "";
     private String lastName = "";
+    private boolean isUser = false;
 
     @Bindable
     public String getFormattedName() {
@@ -109,5 +118,9 @@ public class DataBindingUser extends BaseObservable {
 
     public String getLastName() {
         return this.lastName;
+    }
+
+    public boolean isUser() {
+        return isUser;
     }
 }
