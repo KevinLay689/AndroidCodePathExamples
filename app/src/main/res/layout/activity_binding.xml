@@ -39,5 +39,8 @@
             android:layout_height="wrap_content"
             android:text="Click me Listener Binding"
             android:onClick="@{(view) -> user.clickForNameToastListenerBinding(view, user)}"/>
+
+        <include layout="@layout/layout_binding_example"
+            bind:user2="@{user}"/>
     </LinearLayout>
 </layout>

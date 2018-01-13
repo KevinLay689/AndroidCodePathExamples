@@ -23,6 +23,14 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  *      DataBindingUtil.setContentView(context, layout) to set the view layout
  *          4a. Set the <variables/> objects by creating the object, then using the setName() operator on them
  *
+ * Steps to passing variables inside a <include> </include> tag
+ *      1. Add a bind namespace to the layout
+ *      2. Pass the variable name inside using the bind namespace
+ *          2a. Example bind:user2="@{user}"
+ *      3. Create the variable inside the other layout file, this variable name must match the bind variable
+ *          3a. Example <variable name="user2" type="com.example.kevinlay.androidfundamentalspractice.databinding.DataBindingUser"/>
+ *      4. Reference the user object inside the other layout
+ *
  * To use BindingAdapters see: CustomBinders.java
  * To use 2 way binding with BaseObservable see: DataBindingUser.java
  * To use Method References see: DataBindingUser.java

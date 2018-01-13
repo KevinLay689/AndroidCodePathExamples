@@ -123,6 +123,8 @@
 
     <string name="enter_data_binding_activity_button_text">Enter Data Binding Activity</string>
 
+    <string name="include_default_text">This is a include layout with passed in user name: </string>
+
     <string-array name="planets_array">
         <item>Mercury</item>
         <item>Venus</item>
