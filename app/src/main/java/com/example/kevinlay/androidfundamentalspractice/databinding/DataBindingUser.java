@@ -2,6 +2,8 @@ package com.example.kevinlay.androidfundamentalspractice.databinding;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.databinding.ObservableField;
+import android.databinding.ObservableInt;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -59,6 +61,8 @@ public class DataBindingUser extends BaseObservable {
     private String lastName = "";
     private boolean isUser = true;
 
+    public final ObservableField<String> age = new ObservableField<>();
+
     @Bindable
     public String getFormattedName() {
         return firstName + " " + lastName;
@@ -101,6 +105,23 @@ public class DataBindingUser extends BaseObservable {
         public void afterTextChanged(Editable editable) {
             lastName = editable.toString();
             notifyPropertyChanged(BR.formattedName);
+        }
+    };
+
+    public final TextWatcher ageChanged = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+            age.set(editable.toString());
         }
     };
 

@@ -39,6 +39,13 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  *      3. Use the import type in XML
  *          3a. Example android:visibility="@{user.isAdult ? View.VISIBLE : View.GONE}"
  *
+ * Steps to using Observable Fields
+ *      1. Create a public final ObservableField
+ *          1a. Example public final ObservableField<String> age = new ObservableField<>();
+ *      2. Change its values with set()
+ *      3. Retrieve its value with get()
+ *      4. The field will automatically update itself, basically get 2 way binding for free by using these
+ *
  * To use BindingAdapters see: CustomBinders.java
  * To use 2 way binding with BaseObservable see: DataBindingUser.java
  * To use Method References see: DataBindingUser.java

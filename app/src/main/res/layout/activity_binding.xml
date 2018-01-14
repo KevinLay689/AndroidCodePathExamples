@@ -50,5 +50,14 @@
             android:layout_height="wrap_content"
             android:text="@string/imported_data_text"
             android:visibility="@{user.isUser ? View.VISIBLE : View.GONE}"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/age_hint_text"
+            android:addTextChangedListener="@{user.ageChanged}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.age}" />
     </LinearLayout>
 </layout>
