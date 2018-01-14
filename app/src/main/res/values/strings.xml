@@ -124,6 +124,11 @@
     <string name="enter_data_binding_activity_button_text">Enter Data Binding Activity</string>
 
     <string name="include_default_text">This is a include layout with passed in user name: </string>
+    <string name="first_name_hint_text">First name</string>
+    <string name="last_name_hint_text">Last name</string>
+    <string name="click_me_button_text">Click me </string>
+    <string name="click_me_listener_button_text">Click me for listener binding</string>
+    <string name="imported_data_text">This text is using a imported data type</string>
 
     <string-array name="planets_array">
         <item>Mercury</item>

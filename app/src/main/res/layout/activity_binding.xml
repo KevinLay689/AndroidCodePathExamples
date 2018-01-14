@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:bind="http://schemas.android.com/apk/res-auto">
     <data>
+        <import type="android.view.View"/>
         <variable
             name="user"
             type="com.example.kevinlay.androidfundamentalspractice.databinding.DataBindingUser"/>
@@ -13,12 +14,12 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="First name"
+            android:hint="@string/first_name_hint_text"
             android:addTextChangedListener="@{user.firstNameChanged}"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Last name"
+            android:hint="@string/last_name_hint_text"
             android:addTextChangedListener="@{user.lastNameChanged}"/>
         <TextView
             android:layout_width="wrap_content"
@@ -31,21 +32,23 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Click me"
+            android:text="@string/click_me_button_text"
             android:onClick="@{user::clickForNameToast}"/>
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Click me Listener Binding"
+            android:text="@string/click_me_listener_button_text"
             android:onClick="@{(view) -> user.clickForNameToastListenerBinding(view, user)}"/>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{user.isUser ? user.registerYes : user.registerNo }"/>
-
         <include layout="@layout/layout_binding_example"
             bind:user2="@{user}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/imported_data_text"
+            android:visibility="@{user.isUser ? View.VISIBLE : View.GONE}"/>
     </LinearLayout>
 </layout>

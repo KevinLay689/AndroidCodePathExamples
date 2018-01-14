@@ -31,6 +31,14 @@ import com.example.kevinlay.androidfundamentalspractice.R;
  *          3a. Example <variable name="user2" type="com.example.kevinlay.androidfundamentalspractice.databinding.DataBindingUser"/>
  *      4. Reference the user object inside the other layout
  *
+ * Steps to using imports with Data Binding
+ *      1. Add the <import/> tag to the data section
+ *      2. Make the type of the import the entire class name that is being imported
+ *          2a. Example <import type="android.view.View"/>
+ *          2b. Can also give the class a alias type so it can be referenced as that alias instead of its classname
+ *      3. Use the import type in XML
+ *          3a. Example android:visibility="@{user.isAdult ? View.VISIBLE : View.GONE}"
+ *
  * To use BindingAdapters see: CustomBinders.java
  * To use 2 way binding with BaseObservable see: DataBindingUser.java
  * To use Method References see: DataBindingUser.java

@@ -57,7 +57,7 @@ public class DataBindingUser extends BaseObservable {
 
     private String firstName = "";
     private String lastName = "";
-    private boolean isUser = false;
+    private boolean isUser = true;
 
     @Bindable
     public String getFormattedName() {
