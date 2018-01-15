@@ -23,7 +23,7 @@ public class MyApp extends Application {
         mNetComponent = DaggerNetComponent.builder()
                 // list of modules that are part of this component need to be created here too
                 .appModule(new AppModule(this)) // This also corresponds to the name of your module: %component_name%Module
-                .netModule(new NetModule("https://api.github.com"))
+                .netModule(new NetModule("https://api.github.com/"))
                 .build();
 
         // If a Dagger 2 component does not have any constructor arguments for any of its modules,
