@@ -122,6 +122,7 @@
     <string name="custom_font_custom_view_text">This text has custom font using a Custom View</string>
 
     <string name="enter_data_binding_activity_button_text">Enter Data Binding Activity</string>
+    <string name="enter_dagger_activity_button_text">Enter Dagger 2 Activity</string>
 
     <string name="include_default_text">This is a include layout with passed in user name: </string>
     <string name="first_name_hint_text">First name</string>
