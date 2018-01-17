@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class NetModule {
 
-    String mBaseUrl = "https://api.github.com/";
+    String mBaseUrl;
 
     // Constructor needs one parameter to instantiate.
     public NetModule(String baseUrl) {
@@ -58,8 +58,8 @@ public class NetModule {
     @Provides
     @Singleton
     OkHttpClient provideOkHttpClient(Cache cache) {
-        OkHttpClient.Builder client = new OkHttpClient.Builder()
-                .cache(cache);
+        OkHttpClient.Builder client = new OkHttpClient.Builder();
+        client.cache(cache);
         return client.build();
     }
 

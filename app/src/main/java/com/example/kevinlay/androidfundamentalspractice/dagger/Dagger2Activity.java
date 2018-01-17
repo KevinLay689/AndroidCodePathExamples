@@ -51,6 +51,13 @@ import retrofit2.Retrofit;
  * fragments to have access to singletons we earlier defined
  * -See NetComponent
  *
+ * @Singleton
+ * -Use this annotation to tell dagger to only make one instance of this class
+ *
+ * @Named
+ * -Use this to distinguish methods that return the same type. This is useful if you need two objects
+ * to do different things, but they return the same type
+ *
  * Steps to using Dagger 2
  *      1. Add gradle dependencies
  *      2. Create your Module classes
