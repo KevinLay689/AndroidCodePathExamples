@@ -16,12 +16,13 @@ import com.example.kevinlay.androidfundamentalspractice.NetworkAndModels.Network
 import com.example.kevinlay.androidfundamentalspractice.Services.ServicesActivity;
 import com.example.kevinlay.androidfundamentalspractice.Structure.StructureMainActivity;
 import com.example.kevinlay.androidfundamentalspractice.ViewsAndLayouts.ViewsAndLayoutsActivity;
+import com.example.kevinlay.androidfundamentalspractice.kotlin.KotlinActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button bEnterStructureActivity, bEnterVlActivity, bEnterDesignActivity, bEnterAdapterViews,
                     bEnterDataPersistence, bEnterFragments, bEnterServices, bEnterNetworking, bEnterDataBinding,
-                    bEnterDagger;
+                    bEnterDagger, bEnterKotlin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +112,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), Dagger2Activity.class);
+                startActivity(i);
+            }
+        });
+
+        bEnterKotlin = (Button) findViewById(R.id.bEnterKotlin);
+        bEnterKotlin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), KotlinActivity.class);
                 startActivity(i);
             }
         });
