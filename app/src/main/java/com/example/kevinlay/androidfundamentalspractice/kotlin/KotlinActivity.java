@@ -17,5 +17,6 @@ public class KotlinActivity extends AppCompatActivity {
         UserK userK = new UserK("test", 100);
 
         Log.i(TAG, "onCreate: "+ userK.showDetails());
+        Log.i(TAG, "onCreate: "+ userK.p());
     }
 }
