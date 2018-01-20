@@ -25,6 +25,7 @@ class KotlinExample {
         val isbn = userk.isbn
         val rect = Rectangle(44,45)
         println(rect.isSquare)
+        println(Color.BLUE.rgb())
     }
 
     // Custom getter
@@ -34,4 +35,26 @@ class KotlinExample {
             return height == width
         }
     }
+    // Declares properties of enum constants
+    enum class Color(val r: Int, val g: Int, val b: Int) {
+        // Specifies property values when each constant is created
+        RED(255, 0, 0), ORANGE(255, 165, 0),
+        YELLOW(255, 255, 0), GREEN(0, 255, 0), BLUE(0, 0, 255),
+        // The semicolon here is required.
+        INDIGO(75, 0, 130), VIOLET(238, 130, 238);
+        // Defines a method on the enum class
+        fun rgb() = (r * 256 + g) * 256 + b
+    }
+
+    fun getMnemonic(color: Color) =
+            when (color) {
+                Color.RED -> "Richard"
+                Color.ORANGE -> "Of"
+                Color.YELLOW -> "York"
+                Color.GREEN -> "Gave"
+                Color.BLUE -> "Battle"
+                Color.INDIGO -> "In"
+                Color.VIOLET -> "Vain"
+            }
+
 }
