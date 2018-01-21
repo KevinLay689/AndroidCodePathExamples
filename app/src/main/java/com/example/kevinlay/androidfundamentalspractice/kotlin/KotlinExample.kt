@@ -1,5 +1,9 @@
 package com.example.kevinlay.androidfundamentalspractice.kotlin
 
+import android.content.Context
+import android.util.AttributeSet
+import android.view.View
+
 /**
  * Created by kevinlay on 1/19/18.
  */
@@ -56,5 +60,46 @@ class KotlinExample {
                 Color.INDIGO -> "In"
                 Color.VIOLET -> "Vain"
             }
+
+    // Primary contructor can't contain any code
+    // Use init to initialize variables
+    // During an instance initialization, the initializer blocks are executed in the same order as
+    // they appear in the class body, interleaved with the property initializers:
+
+    class InitOrderDemo(name: String) {
+        val firstProperty = "First property: $name".also(::println)
+
+        init {
+            println("First initializer block that prints ${name}")
+        }
+
+        val secondProperty = "Second property: ${name.length}".also(::println)
+
+        init {
+            println("Second initializer block that prints ${name.length}")
+        }
+    }
+
+    // Secondary Constructors
+    // The class can also declare secondary constructors, which are prefixed with constructor:
+    // If the class has a primary constructor, each secondary constructor needs to delegate to the
+    // primary constructor, either directly or indirectly through another secondary constructor(s).
+    // Delegation to another constructor of the same class is done using the this keyword:
+
+    class Person(val name: String) {
+        constructor(name: String, parent: Person) : this(name) {
+            //parent.children.add(this)
+        }
+    }
+
+    // If the class has no primary constructor, then each secondary constructor has to initialize the
+    // base type using the super keyword, or to delegate to another constructor which does that. Note
+    // that in this case different secondary constructors can call different constructors of the base type:
+
+    class MyView : View {
+        constructor(ctx: Context) : super(ctx)
+        constructor(ctx: Context, attrs: AttributeSet) : super(ctx, attrs)
+    }
+
 
 }
