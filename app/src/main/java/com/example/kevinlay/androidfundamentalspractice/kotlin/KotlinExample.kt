@@ -102,4 +102,60 @@ class KotlinExample {
     }
 
 
+    //  Kotlin requires explicit annotations for overridable members (we call them open) and for overrides:
+
+    open class Base {
+        open fun v() {}
+        fun nv() {}
+    }
+
+    class Derived() : Base() {
+        override fun v() {}
+    }
+
+    // Overriding Properties
+    // Overriding properties works in a similar way to overriding methods; properties declared on a
+    // superclass that are then redeclared on a derived class must be prefaced with override, and they
+    // must have a compatible type.
+
+    open class Foo {
+        open var x: Int = 0
+    }
+
+    class Bar1 : Foo() {
+        override var x: Int = 5
+    }
+
+    // Calling the superclass implementation
+    // Code in a derived class can call its superclass functions and property accessors implementations
+    // using the super keyword:
+
+    open class Foo2 {
+        open fun f() { println("Foo.f()") }
+        open val x: Int get() = 1
+    }
+
+    class Bar : Foo2() {
+        override fun f() {
+            super.f()
+            println("Bar.f()")
+        }
+
+        override val x: Int get() = super.x + 1
+    }
+
+    // Inside an inner class, accessing the superclass of the outer class is done with the super keyword
+    // qualified with the outer class name: super@Outer:
+
+    class Bar2 : Foo2() {
+        override fun f() { /* ... */ }
+        override val x: Int get() = 0
+
+        inner class Baz {
+            fun g() {
+                super@Bar2.f() // Calls Foo's implementation of f()
+                println(super@Bar2.x) // Uses Foo's implementation of x's getter
+            }
+        }
+    }
 }
