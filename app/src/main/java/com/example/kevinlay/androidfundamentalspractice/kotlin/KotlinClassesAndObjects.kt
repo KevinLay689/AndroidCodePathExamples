@@ -51,15 +51,37 @@ class KotlinClassesAndObjects {
     class Derived() : Base() {
         override fun v() {}
     }
-
     // A member marked override is itself open, i.e. it may be overridden in subclasses. If you want
     // to prohibit re-overriding, use final:
-
     open class AnotherDerived() : Base() {
         final override fun v() {}
     }
+    // Overriding Properties
+    // Overriding properties works in a similar way to overriding methods; properties declared on a
+    // superclass that are then redeclared on a derived class must be prefaced with override, and
+    // they must have a compatible type.
+    open class Foo {
+        open val x: Int get() = 5
+    }
 
+    class Bar1 : Foo() {
+        override val x: Int = 0
+    }
+    // Calling the superclass implementation
+    // Code in a derived class can call its superclass functions and property accessors implementations
+    // using the super keyword:
+    open class Foo2 {
+        open fun f() { println("Foo.f()") }
+        open val x: Int get() = 1
+    }
 
+    class Bar : Foo2() {
+        override fun f() {
+            super.f()
+            println("Bar.f()")
+        }
 
+        override val x: Int get() = super.x + 1
+    }
 
 }
