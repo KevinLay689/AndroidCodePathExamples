@@ -5,6 +5,9 @@ package com.example.kevinlay.androidfundamentalspractice.kotlin.kotlin_in_action
  */
 class KotlinBasics {
 
+    /**
+     * 2.1 Basic elements: functions and variables
+     */
     // 2.1.1 Hello, world!
     fun main(args: Array<String>) {
         println("Hello, world!")
@@ -39,4 +42,148 @@ class KotlinBasics {
         val name = if (args.size > 0) args[0] else "Kotlin"
         println("Hello, $name!")
     }
+
+    /**
+     * 2.2 Classes and properties
+     */
+    // 2.2.1 Properties
+    // Now, instead of invoking the getter, you reference the property directly. The logic
+    // stays the same, but the code is more concise. Setters of mutable properties work the same
+    // way: while in Java, you use person.setMarried(false) to tell about a divorce; in
+    // Kotlin, you can write person.isMarried = false.
+    class Person(
+            val name: String,
+            var isMarried: Boolean
+    )
+    val name : String = Person("Kevin", false).name
+
+    // 2.2.2 Custom accessors
+    // Custom getter for isSquare
+    // The property isSquare doesn’t need a field to store its value. It only has a custom
+    // getter with the implementation provided. The value is computed every time the property
+    // is accessed
+    class Rectangle(val height: Int, val width: Int) {
+        val isSquare: Boolean
+        get() {
+            return height == width
+        }
+    }
+
+    /**
+     * 2.3 Representing and handling choices: enums and 'when'
+     */
+    // 2.3.1 Declaring enum classes
+    // Just as in Java, enums aren’t lists of values: you can declare properties and methods
+    // on enum classes.
+    enum class Color(val r: Int, val g: Int, val b: Int) {
+        RED(255, 0, 0), ORANGE(255, 165, 0),
+        YELLOW(255, 255, 0), GREEN(0, 255, 0), BLUE(0, 0, 255),
+        INDIGO(75, 0, 130), VIOLET(238, 130, 238);
+        fun rgb() = (r * 256 + g) * 256 + b
+    }
+
+    // 2.3.2 Using 'when' to deal with enum classes
+    // when is the java statement for switch
+    // when is an expression that returns a value, so you can write a function with
+    // an expression body, returning the when expression directly
+    // You can also combine multiple values in the same branch if you separate them with commas
+    fun getMnemonic(color: Color) =
+            when (color) {
+                Color.RED -> "Richard"
+                Color.ORANGE -> "Of"
+                Color.YELLOW -> "York"
+                Color.GREEN -> "Gave"
+                Color.BLUE -> "Battle"
+                Color.INDIGO -> "In"
+                Color.VIOLET -> "Vain"
+            }
+
+    // 2.3.3 Using 'when' with arbitrary objects
+    // Unlike switch, which requires you to use constants (enum constants, strings, or number literals) as
+    // branch conditions, when allows any objects.
+    fun mix(c1: Color, c2: Color) =
+            when (setOf(c1, c2)) {
+                setOf(Color.RED, Color.YELLOW) -> Color.ORANGE
+                setOf(Color.YELLOW, Color.BLUE) -> Color.GREEN
+                setOf(Color.BLUE, Color.VIOLET) -> Color.INDIGO
+                else -> throw Exception("Dirty color")
+            }
+
+    // 2.3.4 Using 'when' without
+    // If no argument is supplied for the when expression, the branch condition is any
+    // boolean expression
+    fun mixOptimized(c1: Color, c2: Color) =
+            when {
+                (c1 == Color.RED && c2 == Color.YELLOW) ||
+                        (c1 == Color.YELLOW && c2 == Color.RED) ->
+                    Color.ORANGE
+                (c1 == Color.YELLOW && c2 == Color.BLUE) ||
+                        (c1 == Color.BLUE && c2 == Color.YELLOW) ->
+                    Color.GREEN
+                (c1 == Color.BLUE && c2 == Color.VIOLET) ||
+                        (c1 == Color.VIOLET && c2 == Color.BLUE) ->
+                    Color.INDIGO
+                else -> throw Exception("Dirty color")
+            }
+
+    // 2.3.5 Smart casts: combining type checks and casts
+    // In Kotlin, you check whether a variable is of a certain type by using an is check
+    // If you check the variable for a certain type, you don’t need to cast it afterward; you can use it as
+    // having the type you checked for. In effect, the compiler performs the cast for you, and we
+    // call it a smart cast.
+    interface Expr
+    class Num(val value: Int) : Expr
+    class Sum(val left: Expr, val right: Expr) : Expr
+    fun eval(e: Expr): Int
+    { if (e is Num) {
+        val n = e as Num
+        return n.value
+    }
+        if (e is Sum) {
+            return eval(e.right) + eval(e.left)
+        }
+        throw IllegalArgumentException("Unknown expression")
+    }
+
+    // 2.3.6 Refactoring: replacing 'if' with 'when'
+    // Can replace if with when
+    // The when expression isn’t restricted to checking values for equality, which is what
+    // you saw earlier. Here you use a different form of when branches, allowing you to check
+    // the type of the when argument value.
+    fun eval2(e: Expr): Int =
+            if (e is Num) {
+                e.value
+            } else if (e is Sum) {
+                eval2(e.right) + eval2(e.left)
+            } else {
+                throw IllegalArgumentException("Unknown expression")
+            }
+    fun eval3(e: Expr): Int =
+            when (e) {
+                is Num ->
+                    e.value
+                is Sum ->
+                    eval3(e.right) + eval3(e.left)
+                else ->
+                    throw IllegalArgumentException("Unknown expression")
+            }
+
+    // 2.3.7 Blocks as branches of 'if' and 'when'
+    // Both if and when can have blocks as branches. In this case, the last expression in the
+    // block is the result.
+    fun evalWithLogging(e: Expr): Int =
+            when (e) {
+                is Num -> {
+                    println("num: ${e.value}")
+                    e.value
+                }
+                is Sum -> {
+                    val left = evalWithLogging(e.left)
+                    val right = evalWithLogging(e.right)
+                    println("sum: $left + $right")
+                    left + right
+                }
+                else -> throw IllegalArgumentException("Unknown expression")
+            }
+
 }
