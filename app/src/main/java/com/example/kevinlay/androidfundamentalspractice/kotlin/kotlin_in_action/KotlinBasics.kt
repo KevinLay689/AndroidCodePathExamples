@@ -1,5 +1,8 @@
 package com.example.kevinlay.androidfundamentalspractice.kotlin.kotlin_in_action
 
+import java.io.BufferedReader
+import java.util.*
+
 /**
  * Created by kevinlay on 1/22/18.
  */
@@ -185,5 +188,85 @@ class KotlinBasics {
                 }
                 else -> throw IllegalArgumentException("Unknown expression")
             }
+
+    /**
+     * 2.4 Iterating over things: 'while' and 'for' loops
+     */
+    // 2.4.2 Iterating over numbers: ranges and progressions
+    // To replace the most common use cases of such loops, Kotlin
+    // uses the concepts of ranges. A range is essentially just an interval between two values,
+    // usually numbers: a start and an end. You write it using the .. operator:
+    // Note that ranges in Kotlin are closed or inclusive, meaning the second value is also
+    // always a part of the range.
+    // Now you’re iterating over a progression that has a step, which allows it to skip some
+    // numbers. The step can also be negative, in which case the progression goes backward
+    // rather than forward.
+    val oneToTen = 1..10
+    // FizzBuzz
+    fun fizzBuzz(i : Int) = when {
+        i % 15 == 0 -> "FizzBuzz "
+        i % 3 == 0 -> "Fizz "
+        i % 5 == 0 -> "Buzz "
+        else -> "$i "
+    }
+    fun runFizzBuzz() {
+        for(i in 1..100) {
+            fizzBuzz(i)
+        }
+
+        for (i in 100 downTo 1 step 2) {
+            print(fizzBuzz(i))
+        }
+    }
+
+    // 2.4.3 Iterating over maps
+    // The .. syntax to create a range works not only for numbers, but also for characters.
+    // Here you use it to iterate over all characters from 'A' up to and including 'F'.
+    fun mapIterator() {
+        val binaryReps = TreeMap<Char, String>()
+        for (c in 'A'..'F') {
+            val binary = Integer.toBinaryString(c.toInt())
+            binaryReps[c] = binary
+        }
+        for ((letter, binary) in binaryReps) {
+            println("$letter = $binary")
+        }
+    }
+
+    // 2.4.4 Using an 'in' check
+    // You use the in operator to check whether a value is in a range, or its opposite, !in, to
+    // check if a value isn’t in a range
+    // You can combine multiple ranges.
+    fun isLetter(c: Char) = c in 'a'..'z' || c in 'A'..'Z'
+    fun isNotDigit(c: Char) = c !in '0'..'9'
+
+    /**
+     * 2.5 Exceptions in Kotlin
+     */
+    // 2.5.1 'try', 'catch', and 'finally'
+    // Just as in Java, you use the try construct with catch and finally clauses to handle exceptions.
+    fun readNumber(reader: BufferedReader): Int? {
+        try {
+            val line = reader.readLine()
+            return Integer.parseInt(line)
+        } catch (e: NumberFormatException) {
+            return null
+        }
+        finally {
+            reader.close()
+        }
+    }
+
+    // 2.5.2 'try' as an expression
+    // As you can see, the try keyword in Kotlin, just like if and when, introduces an
+    // expression, and you can assign its value to a variable.
+    fun readNumber2(reader: BufferedReader) {
+        val number = try {
+            Integer.parseInt(reader.readLine())
+        } catch (e: NumberFormatException) {
+            return
+        }
+        println(number)
+    }
 
 }
