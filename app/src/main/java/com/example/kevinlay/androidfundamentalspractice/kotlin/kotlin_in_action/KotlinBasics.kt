@@ -269,4 +269,23 @@ class KotlinBasics {
         println(number)
     }
 
+    /**
+     * 2.6 Summary
+        -The fun keyword is used to declare a function.The val and var keywords declareread-only and
+         mutable variables, respectively.
+        -String templates help you avoid noisy string concatenation. Prefix a variable name with $or
+         surround an expression with ${ } to have its value injected into the string.
+        -Value-object classes are expressed in a very concise way in Kotlin.
+        -The familiar if is now an expression with a return value.
+        -The when expression is analogous to switchin Java but is more powerful.
+        -You don’t have to cast a variable explicitly after checking that it has a certain type: thecompiler
+         casts it for you automatically using a smart cast.
+        -The for, while, and do-while loops are very similar to Java, but the for loop is nowmore convenient,
+         especially when you need to iterate over a map or a collection with an index.
+        -The concise syntax 1..5 creates a range. Ranges and progressions allow Kotlin to use a
+         uniform syntax and set of abstractions in for loops and also work with the in and !in operators
+         that check whether a value belongs to a range.
+        -Exception handling in Kotlin is very similar to Java, except that Kotlin doesn’t require
+         you to declare the exceptions that can be thrown by a method.
+     */
 }
