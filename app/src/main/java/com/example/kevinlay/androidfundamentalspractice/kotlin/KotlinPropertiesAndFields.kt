@@ -19,5 +19,4 @@ class KotlinPropertiesAndFields {
     fun setDataFromString(value : String) : String {
         return value
     }
-
 }
