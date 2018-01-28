@@ -17,6 +17,7 @@ import com.example.kevinlay.androidfundamentalspractice.Services.ServicesActivit
 import com.example.kevinlay.androidfundamentalspractice.Structure.StructureMainActivity;
 import com.example.kevinlay.androidfundamentalspractice.ViewsAndLayouts.ViewsAndLayoutsActivity;
 import com.example.kevinlay.androidfundamentalspractice.kotlin.KotlinActivity;
+import com.example.kevinlay.androidfundamentalspractice.rxjava.RxJavaActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -129,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         bEnterRxJava.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), KotlinActivity.class);
+                Intent i = new Intent(getApplicationContext(), RxJavaActivity.class);
                 startActivity(i);
             }
         });
