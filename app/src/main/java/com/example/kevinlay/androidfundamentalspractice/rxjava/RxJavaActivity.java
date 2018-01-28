@@ -2,12 +2,18 @@ package com.example.kevinlay.androidfundamentalspractice.rxjava;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.kevinlay.androidfundamentalspractice.R;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class RxJavaActivity extends AppCompatActivity {
 
@@ -71,6 +77,42 @@ public class RxJavaActivity extends AppCompatActivity {
             // Triggered if there is any errors during the event
             @Override
             public void onError(Throwable e) { }
+        });
+    }
+
+    //Other ways to create Observables
+    private void createObservable3() {
+        // `just` generates an observable object that emits each letter and then completes the stream
+        Observable.just("a", "b", "c");
+
+        //You can create existing arrays as well:
+        ArrayList<String> items = new ArrayList<>();
+        items.add("red");
+        items.add("orange");
+        items.add("yellow");
+        Observable.from(items);
+    }
+
+    // Schedulers
+    private void createObservableWithScheduler() {
+        Observable.from(Arrays.asList(1,2,3,4,5))
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+	            .subscribe(new Observer<Integer>() {
+            @Override
+            public void onCompleted() {
+                //called on completion
+            }
+
+            @Override
+            public void onError(final Throwable e) {
+                //called when error occurs
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                Log.d("emit", integer+"");
+            }
         });
     }
 }
