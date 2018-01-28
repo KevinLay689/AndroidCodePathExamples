@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button bEnterStructureActivity, bEnterVlActivity, bEnterDesignActivity, bEnterAdapterViews,
                     bEnterDataPersistence, bEnterFragments, bEnterServices, bEnterNetworking, bEnterDataBinding,
-                    bEnterDagger, bEnterKotlin;
+                    bEnterDagger, bEnterKotlin, bEnterRxJava;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,5 +125,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        bEnterRxJava = (Button) findViewById(R.id.bEnterRxJava);
+        bEnterRxJava.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), KotlinActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }

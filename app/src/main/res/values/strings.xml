@@ -124,6 +124,7 @@
     <string name="enter_data_binding_activity_button_text">Enter Data Binding Activity</string>
     <string name="enter_dagger_activity_button_text">Enter Dagger 2 Activity</string>
     <string name="enter_kotlin_activity_button_text">Enter Kotlin Activity</string>
+    <string name="enter_rx_java_activity_button_text">Enter Rx Java Activity</string>
 
     <string name="include_default_text">This is a include layout with passed in user name: </string>
     <string name="first_name_hint_text">First name</string>

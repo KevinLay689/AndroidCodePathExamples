@@ -73,4 +73,10 @@
         android:layout_height="wrap_content"
         android:text="@string/enter_kotlin_activity_button_text" />
 
+    <Button
+        android:id="@+id/bEnterRxJava"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_rx_java_activity_button_text" />
+
 </LinearLayout>

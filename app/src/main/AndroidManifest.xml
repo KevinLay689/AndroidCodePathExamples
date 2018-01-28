@@ -78,7 +78,8 @@
         <activity android:name=".DesigningAndStylingViews.CustomFont.CustomFontActivity" />
         <activity android:name=".databinding.BindingActivity" />
         <activity android:name=".dagger.Dagger2Activity" />
-        <activity android:name=".kotlin.KotlinActivity"></activity>
+        <activity android:name=".kotlin.KotlinActivity" />
+        <activity android:name=".rxjava.RxJavaActivity" />
     </application>
 
 </manifest>
