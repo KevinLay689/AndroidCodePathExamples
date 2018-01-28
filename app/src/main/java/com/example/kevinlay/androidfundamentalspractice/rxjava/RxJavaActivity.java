@@ -94,6 +94,13 @@ public class RxJavaActivity extends AppCompatActivity {
     }
 
     // Schedulers
+    // Here are the things to note from the example code below:
+    // -subscribeOn(Schedulers.newThread()): This will make the Observable do its background work in a new thread
+    // -.observeOn(AndroidSchedulers.mainThread())): This makes the subscriber action to execute its
+    // result on Android's main UI thread. This is very important especially when change to a UI component
+    // needs to be made based on the result.
+    // -.subscribe(): Subscribes an Observer to the Observable. The Observers onNext method is called
+    // on each emitted item, followed by either onCompletion if it runs successfully or onError if an error occurs.
     private void createObservableWithScheduler() {
         Observable.from(Arrays.asList(1,2,3,4,5))
                 .subscribeOn(Schedulers.newThread())
