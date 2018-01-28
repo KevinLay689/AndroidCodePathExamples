@@ -3,6 +3,7 @@ package com.example.kevinlay.androidfundamentalspractice.rxjava;
 import android.util.Log;
 
 import rx.subjects.PublishSubject;
+import rx.subjects.ReplaySubject;
 
 /**
  * Subject
@@ -26,7 +27,7 @@ public class RxJavaSubject {
         // called actions. We can provide that function in different ways:
         PublishSubject<Integer> subject = PublishSubject.create();
         subject.onNext(1);
-        subject.subscribe((v) -> handleInt(v));
+        subject.subscribe(this::handleInt);
         subject.onNext(2);
         subject.onNext(3);
         subject.onNext(4);
@@ -34,5 +35,20 @@ public class RxJavaSubject {
 
     void handleInt(int v) {
         Log.i("", "handleInt: "+ v);
+    }
+
+    // ReplaySubject
+    // ReplaySubject has the special feature of caching all the values pushed to it. When a new subscription
+    // is made, the event sequence is replayed from the start for the new subscriber. After catching up,
+    // every subscriber receives new events as they come.
+    public void createReplaySubject() {
+        // All the values are received by the subscribers, even though one was late. Also notice that
+        // the late subscriber had everything replayed to it before proceeding to the next value.
+        ReplaySubject<Integer> s = ReplaySubject.create();
+        s.subscribe(this::handleInt);
+        s.onNext(0);
+        s.onNext(1);
+        s.subscribe(this::handleInt);
+        s.onNext(2);
     }
 }
